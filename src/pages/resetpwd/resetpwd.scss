@@ -1,0 +1,146 @@
+page-resetpwd {
+    ion-content {
+        background: url(../assets/img/login-bg.jpg) no-repeat 0 0 / 100% 100%;
+        .scroll-content {
+            overflow-y: hidden;
+            padding: 0 16px;
+        }
+    }
+    //透明头
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-md-transparent .toolbar-background-md{
+        background: transparent;
+        border-color: transparent;
+    }
+    .toolbar-md-transparent .toolbar-title-md, .toolbar-ios-transparent .toolbar-title-ios{
+        color: #ffffff;
+    }
+    .bar-button-default-ios, .bar-button-default-md{
+        color: #ffffff;
+    }
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-ios-transparent .toolbar-background-ios{
+        border-color: transparent !important;
+    }
+    .transparent::after{
+        border-color: transparent !important;
+    }
+    .header-md-transparent::after{
+        background-image: none !important;
+    }
+    .get-code-m{
+        position: absolute;
+        top:0;
+        right:0;
+        padding: 15px 0;
+        color: #ccc;
+    }
+
+
+    .login-back{
+        float: left;
+        width: 100%;
+        margin-top: 30px;
+        min-height: 30px;
+    }
+    .header-logo{
+        float: left;
+        width: 100%;
+        height: 20vh;
+        background: url(../assets/img/logo-white.png) no-repeat center bottom / 20vw auto;
+    }
+    .form-con{
+        float: left;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .form-row{
+        float: left;
+        width: 100%;
+        margin-bottom: 2vh;
+        border-bottom: 1px #676767 solid;
+        padding: 15px 0;
+        position: relative;
+    }
+    .form-row i{
+        color: #aaa;
+        font-size: 20px;
+        height: 20px;
+        line-height: 20px;
+        float: left;
+        width: 40px;
+    }
+    .form-row input{
+        background: transparent;
+        border: none;
+        float: left;
+        width: calc(100% - 45px);
+        width: -moz-calc(100% - 45px);
+        width: -webkit-calc(100% - 45px);
+        height: 20px;
+        line-height: 20px;
+        color: #fff;
+        font-size: 14px;
+    }
+    .link-row{
+        float: left;
+        width: 100%;
+        color: #fff;
+        text-align: center;
+        margin: 2vh 0 3vh 0;
+    }
+    .clear-btn-all{
+        background: transparent;
+        border: 1px #676767 solid;
+    }
+    .other-login{
+        display: block;
+        margin-top: 50px;
+        color: #bababa;
+    }
+    .other-login .login-item{
+        float: left;
+        width: 33.33%;
+        line-height: 2.2em;
+        font-size: 13px;
+        text-align: center;
+    }
+    .other-login .login-item div{
+        display: inline-block;
+    }
+    .other-login .login-item span{
+        float: left;
+        width: 2.2em;
+        height: 2.2em;
+        margin-right: 5px;
+    }
+    @media screen and (min-width: 500px){
+        .button-ios, .button-md{
+            height: 3em;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        ion-content {
+            .scroll-content {
+                padding: 0 64px;
+            }
+        }
+        .other-login .login-item span{
+            width: 4em;
+            height: 4em;
+            margin-right: 10px;
+        }
+        .other-login .login-item{
+            line-height: 4em;
+            font-size: 16px;
+        }
+    }
+    
+    .mm-qq{
+        background: url(../assets/img/login-qq.png) no-repeat center center / 90% auto;
+    }
+    .mm-weixin{
+        background: url(../assets/img/login-wx.png) no-repeat center center / 100% auto;
+    }
+    .mm-weibo{
+        background: url(../assets/img/login-weibo.png) no-repeat center center / 90% auto;
+    }
+}

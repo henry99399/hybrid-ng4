@@ -1,0 +1,559 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <div class="my-set-navbar">
+      <div class="plan-nav-1">
+        <button ion-button icon-only style="float:left" (tap)="saomaAddBook($event)">
+          <ion-icon id="shlefStartBtn" class="iconfont icon-saoma1" style="padding:0 8px; font-size:1.6em"></ion-icon>
+        </button>
+        <button ion-button icon-only style="float:right" (tap)="toSearch($event)">
+          <ion-icon id="shlefEndBtn" class="iconfont icon-search" style="padding: 0 8px; font-size:1.6em"></ion-icon>
+        </button>
+        <div class="nav-li-par">
+          <div class="nav-li-pll" [ngClass]="'active_'+ active_index">
+            <ul class="header-nav-bar-lab">
+              <li (tap)="activeTo(1)">精选</li>
+              <li (tap)="activeTo(2)">女频</li>
+              <li (tap)="activeTo(3)">男频</li>
+              <li (tap)="activeTo(4)">出版</li>
+            </ul>
+            <label class="dmdd">
+              <s></s>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="swiper-container" id="mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="pd-col-content-all">
+          <div class="page-notwork" (tap)="init()"></div>
+          <div class="has-wifi">
+            <!--广告位-->
+            <div class="pd-col-content p-gg">
+              <ion-slides loop pager autoplay="6000" *ngIf="g_10001 && g_10001.length > 1">
+                <ion-slide *ngFor="let item of g_10001" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+              <ion-slides *ngIf="g_10001 && g_10001.length == 1">
+                <ion-slide *ngFor="let item of g_10001" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+            </div>
+            <!--快捷导航-->
+            <div class="pd-col-content cm-nav-bar">
+              <div class="cm-nv-item" (tap)="toClassify($event)">
+                <img src="assets/img/mm-1.png">
+                <p>分类</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toOrder(2)">
+                <img src="assets/img/mm-2.png">
+                <p>排行</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('6','都市现实','1')">
+                <img src="assets/img/mm-3.png">
+                <p>都市</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('2','玄幻奇幻','1')">
+                <img src="assets/img/mm-4.png">
+                <p>玄幻</p>
+              </div>
+              <div class="cm-nv-item">
+                <img src="assets/img/mm-5.png" (tap)="toXianmian('1')">
+                <p>限免</p>
+              </div>
+            </div>
+            <!--小编推荐-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">小编推荐
+                <a (tap)="toTjBookPage('20001','小编推荐')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20001" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--模块引导-->
+            <div class="pd-col-content model-yd">
+              <div class="yd-item" (tap)="activeTo(3)">
+                <h1>男生小说</h1>
+                <ul>
+                  <li>都市</li>
+                  <li>玄幻</li>
+                  <li>仙侠</li>
+                  <li>历史</li>
+                </ul>
+                <img src="assets/img/nav-1.png" />
+              </div>
+              <div class="yd-item" (tap)="activeTo(2)">
+                <h1>女生小说</h1>
+                <ul>
+                  <li>总裁</li>
+                  <li>豪门</li>
+                  <li>穿越</li>
+                  <li>重生</li>
+                </ul>
+                <img src="assets/img/nav-2.png" />
+              </div>
+              <div class="yd-item" (tap)="activeTo(4)">
+                <h1>出版文学</h1>
+                <ul>
+                  <li>历史</li>
+                  <li>财经</li>
+                  <li>经典</li>
+                  <li>励志</li>
+                </ul>
+                <img src="assets/img/nav-3.png" />
+              </div>
+            </div>
+            <!--总裁爱上我-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">总裁爱上我
+                <a (tap)="toTjBookPage('20002','总裁爱上我')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20002" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--王妃不好惹-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">王妃不好惹
+                <a (tap)="toTjBookPage('20003','王妃不好惹')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20003" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--异界当女王-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">异界当女王
+                <a (tap)="toTjBookPage('20004','异界当女王')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20004" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--兵王闯花都-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">兵王闯花都
+                <a (tap)="toTjBookPage('20005','兵王闯花都')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20005" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--废材逆袭流-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">废材逆袭流
+                <a (tap)="toTjBookPage('20006','废材逆袭流')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20006" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--人鬼情未了-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">人鬼情未了
+                <a (tap)="toTjBookPage('20007','人鬼情未了')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20007" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--精彩出版推荐-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">精选出版
+                <a (tap)="toTjBookPage('20008','精选出版')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_20008" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <div class="message-bottom">已经到底了，到别的频道逛逛吧!</div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="pd-col-content-all">
+          <div class="page-notwork" (tap)="init()"></div>
+          <div class="has-wifi">
+            <!--广告位-->
+            <div class="pd-col-content p-gg">
+              <ion-slides loop pager autoplay="6000" *ngIf="g_10002 && g_10002.length > 1">
+                <ion-slide *ngFor="let item of g_10002" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+              <ion-slides *ngIf="g_10002 && g_10002.length == 1">
+                <ion-slide *ngFor="let item of g_10002" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+            </div>
+            <!--快捷导航-->
+            <div class="pd-col-content cm-nav-bar">
+              <div class="cm-nv-item">
+                <img src="assets/img/mm-2.png" (tap)="toOrder(0)">
+                <p>排行</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('9','古代言情','0')">
+                <img src="assets/img/mm-6.png">
+                <p>古言</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('2','现代言情','0')">
+                <img src="assets/img/mm-7.png">
+                <p>现言</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('4','穿越重生','0')">
+                <img src="assets/img/mm-8.png">
+                <p>穿越</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toXianmian('1')">
+                <img src="assets/img/mm-5.png">
+                <p>限免</p>
+              </div>
+            </div>
+            <!--本期热推-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">本期热推
+                <a (tap)="toTjBookPage('30001','本期热推')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_30001" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--中间分类-->
+            <div class="pd-col-content class-model">
+              <div class="class-model-l">
+                <div class="class-li" *ngFor="let cat of c_nv;let i=index" [hidden]="i > 7" (tap)="toClassifyList(cat.book_cat_id,cat.book_cat_name,0)">{{cat.book_cat_name}}</div>
+              </div>
+              <div class="class-cm-bg">
+                <img src="assets/img/class-bg.png">
+                <div class="class-cm-bg-fix">
+                  <div class="cc-fix-item fix-1" (tap)="toYcTypeBookPage('hot','热推','0')">热推</div>
+                  <div class="cc-fix-item fix-2" (tap)="toYcTypeBookPage('star','星级','0')">星级</div>
+                  <div class="cc-fix-item fix-3" (tap)="toYcTypeBookPage('redbook','红书','0')">红书</div>
+                  <div class="cc-fix-item" (tap)="toYcTypeBookPage('new','最新','0')">最新</div>
+                </div>
+              </div>
+            </div>
+            <!--美人志-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">美人志
+                <a (tap)="toTjBookPage('30002','美人志')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_30002" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--点金作品-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">点金作品
+                <a (tap)="toTjBookPage('30003','点金作品')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_30003" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--编辑力荐-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">编辑力荐
+                <a (tap)="toTjBookPage('30004','编辑力荐')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_30004" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <div class="message-bottom">已经到底了，到别的频道逛逛吧!</div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="pd-col-content-all">
+          <div class="page-notwork" (tap)="init()"></div>
+          <div class="has-wifi">
+            <!--广告位-->
+            <div class="pd-col-content p-gg">
+              <ion-slides loop pager autoplay="6000" *ngIf="g_10003 && g_10003.length > 1">
+                <ion-slide *ngFor="let item of g_10003" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+              <ion-slides *ngIf="g_10003 && g_10003.length == 1">
+                <ion-slide *ngFor="let item of g_10003" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+            </div>
+            <!--快捷导航-->
+            <div class="pd-col-content cm-nav-bar">
+              <div class="cm-nv-item" (tap)="toOrder(1)">
+                <img src="assets/img/mm-2.png">
+                <p>排行</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('6','都市现实','1')">
+                <img src="assets/img/mm-3.png">
+                <p>都市</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('2','玄幻奇幻','1')">
+                <img src="assets/img/mm-4.png">
+                <p>玄幻</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toClassifyList('1','仙侠武侠','1')">
+                <img src="assets/img/mm-9.png">
+                <p>仙侠</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toXianmian('2')">
+                <img src="assets/img/mm-5.png">
+                <p>限免</p>
+              </div>
+            </div>
+            <!--本期热推-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">本期热推
+                <a (tap)="toTjBookPage('40001','本期热推')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_40001" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--中间分类-->
+            <div class="pd-col-content class-model">
+              <div class="class-model-l">
+                <div class="class-li" *ngFor="let cat of c_nan;let i=index" [hidden]="i > 7" (tap)="toClassifyList(cat.book_cat_id,cat.book_cat_name,1)">{{cat.book_cat_name}}</div>
+              </div>
+              <div class="class-cm-bg">
+                <img src="assets/img/class-bg.png">
+                <div class="class-cm-bg-fix">
+                  <div class="cc-fix-item fix-1" (tap)="toYcTypeBookPage('hot','热推','1')">热推</div>
+                  <div class="cc-fix-item fix-2" (tap)="toYcTypeBookPage('star','星级','1')">星级</div>
+                  <div class="cc-fix-item fix-3" (tap)="toYcTypeBookPage('redbook','红书','1')">红书</div>
+                  <div class="cc-fix-item" (tap)="toYcTypeBookPage('new','最新','1')">最新</div>
+                </div>
+              </div>
+            </div>
+            <!--烽火台-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">烽火台
+                <a (tap)="toTjBookPage('40002','烽火台')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_40002" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--点金作品-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">点金作品
+                <a (tap)="toTjBookPage('40003','点金作品')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_40003" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--编辑力荐-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">编辑力荐
+                <a (tap)="toTjBookPage('40004','编辑力荐')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_40004" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <div class="message-bottom">已经到底了，到别的频道逛逛吧!</div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="pd-col-content-all">
+          <div class="page-notwork" (tap)="init()"></div>
+          <div class="has-wifi">
+            <!--广告位-->
+            <div class="pd-col-content p-gg">
+              <ion-slides loop="true" pager autoplay="6000" *ngIf="g_10004 && g_10004.length > 1">
+                <ion-slide *ngFor="let item of g_10004" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+              <ion-slides *ngIf="g_10004 && g_10004.length == 1">
+                <ion-slide *ngFor="let item of g_10004" (tap)="toBookInfo(item.adv_url.split('|')[0], item.adv_url.split('|')[1])">
+                  <img src="{{service.ctxPath + item.adv_img}}" onload="imgLoad(this)" class="opacity_img">
+                </ion-slide>
+              </ion-slides>
+            </div>
+            <!--快捷导航-->
+            <div class="pd-col-content cm-nav-bar">
+              <div class="cm-nv-item" (tap)="toOrder_cb()">
+                <img src="assets/img/mm-2.png">
+                <p>排行</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toBook_tj()">
+                <img src="assets/img/mm-3.png">
+                <p>特价</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toCbNewBookPage()">
+                <img src="assets/img/mm-4.png">
+                <p>新书</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toCbHotBookPage()">
+                <img src="assets/img/mm-9.png">
+                <p>热门</p>
+              </div>
+              <div class="cm-nv-item" (tap)="toXianmian('3')">
+                <img src="assets/img/mm-5.png">
+                <p>限免</p>
+              </div>
+            </div>
+            <!--本期热推-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">本期热推
+                <a (tap)="toTjBookPage('50001','本期热推')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_50001" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--好好说话-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">好好说话
+                <a (tap)="toTjBookPage('50002','好好说话')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_50002" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--精品小说-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">精品小说
+                <a (tap)="toTjBookPage('50003','精品小说')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_50003" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--励志人生-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">励志人生
+                <a (tap)="toTjBookPage('50004','励志人生')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_50004" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--人在职场-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">人在职场
+                <a (tap)="toTjBookPage('50005','人在职场')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_50005" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <!--人文社科-->
+            <div class="pd-col-content df-model">
+              <div class="df-model-header">人文社科
+                <a (tap)="toTjBookPage('50006','人文社科')">查看更多&gt;</a>
+              </div>
+              <div class="model-book" *ngFor="let book of m_50006" (tap)="toBookInfo(book.book_id,book.book_type)">
+                <div class="m_cover">
+                  <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+                  <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+                </div>
+                <p>{{book.book_name}}</p>
+              </div>
+            </div>
+            <div class="message-bottom">已经到底了，到别的频道逛逛吧!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

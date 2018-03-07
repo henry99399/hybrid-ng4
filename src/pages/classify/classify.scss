@@ -1,0 +1,99 @@
+page-classify {
+    ion-content {
+        .scroll-content {
+            overflow-y: hidden;
+        }
+    }
+    .has-wifi{
+        float: left;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .toolbar-title-md{
+        text-align: center;
+        padding-right: 55px;
+    }
+    .classify-left{
+        float: left;
+        width: 80px;
+        height: 100%;
+        position: relative;
+        border-right: 1px solid #eee;
+    }
+    .classify-left > span{
+        float: left;
+        width: 100%;
+        line-height: 40px;
+        margin: 15px 0;
+        text-align: center;
+        font-size: 16px;
+        position: relative;
+    }
+    .classify-left > span.active{
+        color: #ee4552;
+        background: #fff;
+    }
+    .classify-left > span.active:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: #ee4552;
+        color: #979797;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    .classify-right{
+        float: left;
+        width: calc(100% - 80px);
+        width: -moz-calc(100% - 80px);
+        width: -webkit-calc(100% - 80px);
+        height: 100%;
+        position: relative;
+    }
+    .nnn-con{
+        float: left;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .cc-item{
+        float: left;
+        width: 50%;
+        padding: 16px;
+    }
+    .cc-item img{
+        float: left;
+        width: 100%;
+        height: 27vw;
+    }
+    .cc-item p{
+        margin: 0;
+        font-size: 12px;
+        float: left;
+        width: 100%;
+        padding-top: 5px;
+        line-height: 30px;
+    }
+    @media screen and (min-width: 500px){
+        .cc-item{
+            width: 33.33%;
+        } 
+        .cc-item img{
+            height: 22vw;
+        }
+        .classify-left{
+            width: 120px;
+        }
+        .classify-right{
+            width: calc(100% - 120px);
+            width: -moz-calc(100% - 120px);
+            width: -webkit-calc(100% - 120px);
+        }
+    }
+}

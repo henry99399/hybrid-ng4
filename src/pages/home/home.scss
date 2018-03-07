@@ -1,0 +1,322 @@
+page-home {
+    background: url('../assets/img/top_01.jpg') no-repeat center 0 / 100% auto #fff;
+    ion-content {
+        background: transparent !important;
+        .scroll-content {
+            //overflow-y: hidden;
+        }
+    }
+    ion-content.hasBackground{
+        background: #fff !important; 
+    }
+    .wrapper-content{
+        display: inline-block;
+        width: 100%;
+    }
+    .book-top{
+        float: left;
+        width: 100%;
+        height: calc(36vw + 22px);
+        height: -moz-calc(36vw + 22px);
+        height: -webkit-calc(36vw + 22px);
+        position: relative;
+        overflow: hidden;
+        padding-top: 6px;
+    }
+    .flipx { 
+        -webkit-transform:rotate(180deg);
+        transition: all 0.5s;
+    }
+    #scroller-pullDown{
+        position: absolute;
+        width: 100%;
+        top: -60px;
+        line-height: 20px;
+        text-align: center;
+        left: 0;
+        color: #fff;
+        font-size: 13px;
+    }
+    .spinner-ios-dots circle, .spinner-md-dots circle{
+        fill: #fff;
+    }
+    
+    .book_shlef_list{
+        float: left;
+        width: 100%;
+        background: #fff;
+        padding-top: 16px;
+        overflow: hidden;
+        min-height: 70vh;
+    }
+    .book_shlef_list .m_cover{
+        box-shadow: 0px 0px 3px #ccc;
+    }
+    .add-find-book{
+        float: left;
+        width: 100%;
+        padding: 16vh 0;
+        text-align: center;
+        font-size: 14px;
+        color: #898989;
+        line-height: 50px;
+    }
+    .add-find-book button{
+        font-size: 1.4rem !important;
+    }
+    #shlef_page{
+        float: left;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .book-item-list{
+        float: left;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .book_cover{
+        float: left;
+        width: 33.33%;
+        margin-bottom: 16px;
+    }
+    .book_cover .m_cover{
+        display: block;
+        height: 36vw;
+        width: 27vw;
+        margin: 0 auto;
+        position: relative;
+        background: url(../assets/img/coverNoBook.jpg) no-repeat 0 0 / 100% 100% #efefef;
+    }
+    .today-hot-0{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        background: url(../assets/img/today-hot.png) no-repeat 0 0 / 100% auto;
+    }
+    .today-hot-1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        background: url(../assets/img/today-jingping.png) no-repeat 0 0 / 100% auto;
+    }
+    .today-hot-2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        background: url(../assets/img/today-mianfei.png) no-repeat 0 0 / 100% auto;
+    }
+    .today-hot-3{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        background: url(../assets/img/today-mianfei.png) no-repeat 0 0 / 100% auto;
+    }
+    .book_cover .m_cover img{
+        float: left;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    //透明头
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-md-transparent .toolbar-background-md{
+        background: transparent;
+        border-color: transparent;
+    }
+    .toolbar-md-transparent .toolbar-title-md, .toolbar-ios-transparent .toolbar-title-ios{
+        color: #ffffff;
+    }
+    .bar-button-default-ios, .bar-button-default-md{
+        color: #ffffff;
+    }
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-ios-transparent .toolbar-background-ios{
+        border-color: transparent !important;
+    }
+    .transparent::after{
+        border-color: transparent !important;
+    }
+    .header-md-transparent::after{
+        background-image: none !important;
+    }
+    .book-load-progrees{
+        position: absolute;
+        background: rgba(0,0,0,0.75);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        text-align: center;
+        padding-top: 50%
+    }
+    .spinner-ios-ios-small circle, .spinner-md-ios-small circle{
+        fill: #fff;
+    }
+    .toolbar-ios-transparent .button-ios, .toolbar-md-transparent .button-md{
+        height:36px;
+        margin: 0;
+        background: transparent;
+        color: #fff;
+        box-shadow: none;
+    }
+    .header-md-transparent .toolbar-md{
+        height: 56px;
+    }
+
+    #today-qiandao{
+        position: fixed;
+        width: 4.5rem;
+        height: 4.5rem;
+        background: #f16a75;
+        color: #fff;
+        text-align: center;
+        line-height: 4.5rem;
+        font-size: 2.2rem;
+        border-radius: 4.5rem;
+        box-shadow: 2px 2px 2px #ccc;
+        right: 2rem;
+        bottom: 8rem;
+        z-index: 9999;
+    }
+    .select-icon{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 5px;
+        top: 5px;
+        background: url(../assets/img/add-reck-old.png) no-repeat center center / 100% 100%;
+    }
+    .select-icon.active{
+        background: url(../assets/img/rack-sel-at.png) no-repeat center center / 100% 100%;
+    }
+    .update-footer{
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 99999;
+        padding: 5px 10px;
+    }
+    
+
+
+      
+    #pullDown,#pullUp,.pulldown-tips{  
+        height:60px;  
+        text-align:center;  
+        color: #fff;
+        font-size: 12px;
+    }  
+    .pulldown-tips{  
+        position:absolute;  
+        top:-60px;  
+        left:0;  
+        width:100%;  
+    }  
+
+
+    //自定义头
+    .my-set-navbar{
+        width: 100%;
+        height: 44px;
+        position: relative;
+    }
+    .header-md-transparent .my-set-navbar{
+        height: 56px;
+    }
+    .plan-nav-1{
+        float:left;
+        width: 100%;
+        padding: 4px;
+        height: 44px;
+        position: relative;
+        text-align: center;
+    }
+    .plan-nav-2{
+        position: absolute;
+        width: 100%;
+        padding: 4px;
+        height: 44px;
+        text-align: center;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+    .my-set-navbar h1{
+        line-height: 36px;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #fff;
+        pointer-events: auto;
+        margin: 0;
+    }
+    .my-set-navbar .plan-nav-2 *{
+        color: #000 !important;
+    }  
+    .header-md-transparent .plan-nav-1, 
+    .header-md-transparent .plan-nav-2{
+        padding: 10px 4px;
+        height: 56px;
+    }
+    .add_book_action .m_cover{
+        background: #fff;
+        box-shadow: 0px 0px 3px #ccc;
+    }
+    .add_book_action .m_cover i{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 35px;
+        margin: -18px auto auto -18px;
+        color: #dcdcdc;
+    }
+    .page-content-all{
+        float: left;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+
+    @media screen and (min-width: 500px){
+        .book-top{
+            height: calc(24vw + 40px);
+            height: -moz-calc(24vw + 40px);
+            height: -webkit-calc(24vw + 40px);
+        }
+        .book_cover{
+            float: left;
+            width: 25%;
+            margin-bottom: 16px;
+        }
+        .book_cover .m_cover{
+            display: block;
+            height: 24vw;
+            width: 18vw;
+        }
+        .book_cover{
+            margin: 10px 0 20px 0
+        }
+        #today-qiandao{
+            width: 7rem;
+            height: 7rem;
+            line-height: 7rem;
+            font-size: 4rem;
+            right: 5rem;
+            bottom: 10rem;
+        }
+    }
+
+
+    
+}

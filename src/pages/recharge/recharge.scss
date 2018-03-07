@@ -1,0 +1,85 @@
+page-recharge {
+    ion-content {
+        .scroll-content {
+            background: #f5f8fa;
+            overflow-y: hidden;
+        }
+    }
+    .cz-conn{
+        float: left;
+        width: 100%;
+        padding: 16px;
+    }
+    .cz-conn .cm-item{
+        float: left;
+        width: calc(50% - 9px);
+        width: -moz-calc(50% - 9px);
+        width: -webkit-calc(50% - 9px);
+        position: relative;
+        border: 1px #eee solid;
+        padding: 20px 0 15px 0;
+        text-align: center;
+        margin-bottom: 16px;
+        background: #fff;
+    }
+    .cz-conn .cm-item h3{
+        margin: 0 0 5px 0;
+        font-size: 2rem;
+    }
+    .cz-conn .cm-item p{
+        margin: 0;
+        color: #999;
+        font-size: 12px;
+    }
+    .cz-conn .cm-item em{
+        position: absolute;
+        right: 0;
+        top:0;
+        width: 100%;
+        height: 24px;
+    }
+    .cz-conn .cm-item.active{
+        border: 1px #ff595c solid;
+    }
+    .cz-conn .cm-item em.cc-2{
+        background: url('../assets/img/pay-1.png') no-repeat right bottom / auto 20px;
+    }
+    .cz-conn .cm-item em.cc-3{
+        background: url('../assets/img/pay-2.png') no-repeat right bottom / auto 20px;
+    }
+    .cz-conn .cm-item em.cc-4{
+        background: url('../assets/img/pay-3.png') no-repeat right bottom / auto 20px;
+    }
+    .cz-conn .cm-item em.cc-5{
+        background: url('../assets/img/pay-4.png') no-repeat right bottom / auto 20px;
+    }
+    .cz-conn .cm-item em.cc-6{
+        background: url('../assets/img/pay-5.png') no-repeat right bottom / auto 20px;
+    }
+    .cz-conn .cm-item:nth-child(2n){
+        float: right;
+    }
+    .ts-msg{
+        float: left;
+        width: 100%;
+        margin-top: 30px;
+        border: 1px #ddd solid;
+        position: relative;
+        padding: 15px 16px 10px;
+        border-radius: 10px;
+    }
+    .ts-msg > span{
+        position: absolute;
+        line-height: 30px;
+        padding: 0 10px;
+        top: -15px;
+        left: 10px;
+        background: #f5f8fa;
+        color: #838384;
+    }
+    .ts-msg p{
+        margin: 5px 0;
+        color: #838384;
+        font-size: 13px;
+    }
+}

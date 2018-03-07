@@ -1,0 +1,29 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>热门</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="pd-col-content-all" id="scroll_nv" style="opacity: 0">
+    <div class="book-line" *ngFor="let book of nv_order_data"  (tap)="toBookInfo(book.book_id,book.book_type)">
+      <div class="m-cover">
+        <img src="{{ service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2">
+        <img src="{{ book.book_cover_small}}" *ngIf="book.book_type == 1">
+      </div>
+      <div class="m-detail">
+        <h1>{{book.book_name}}</h1>
+        <div class="m-remark">{{book.book_remark}}</div>
+        <div class="m-other">
+          <label class="m-left">{{book.book_author}}</label>
+          <label class="m-right">{{book.book_cat_name}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="message-load-bottom" [hidden]="load_more_nv">
+      <ion-spinner name="dots"></ion-spinner>
+      <div>请稍候，努力加载中</div>
+    </div>
+    <div class="message-bottom" [hidden]="!load_more_nv || nv_param.pages > nv_param.pageNum">已经到底了，到别的频道逛逛吧!</div>
+  </div>
+</ion-content>

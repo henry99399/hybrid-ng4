@@ -1,0 +1,319 @@
+page-qiandao {
+    ion-content {
+        background: url('../assets/img/nav-5.png') no-repeat center 0 / 100% auto #fff;
+        .scroll-content {
+            overflow-y: hidden;
+        }
+    }
+    .ml-nav{
+        overflow: hidden;
+        height: calc(46vw - 45px);
+        height: -moz-calc(46vw - 45px);
+        height: -webkit-calc(46vw - 45px);
+    }
+    .ml-table{
+        display: inline-block;
+        width: 100%;
+        padding: 16px;
+    }
+    .ml-table .table-rol{
+        float: left;
+        width: 14.285%;
+        position: relative;
+        padding: 5px 0;
+        position: relative;
+    }
+    .ml-table .table-rol .m1{
+        float: left;
+        width: 100%;
+        line-height: 2.2em;
+        text-align: center;
+        font-size: 16px;
+    }
+    .ml-table .table-rol .m2{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('../assets/img/qd-1.png') no-repeat center bottom / 1em auto;
+        left: 0;
+        bottom: 0;
+    }
+    .ml-table .table-rol .m3{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('../assets/img/qd-3.png') no-repeat center center / auto 2.2em #fff;
+        left: 0;
+        bottom: 0;
+    }
+    .ml-table .table-rol .m4{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('../assets/img/qd-2.png') no-repeat center center / auto 2.2em #fff;
+        left: 0;
+        bottom: 0;
+    }
+    .ml-table .un-qiandao{
+        color: #999 !important;
+        font-weight: normal !important;
+    }
+    .ml-table .this-today{
+        color: #f53d3d !important;
+        font-weight: bold !important;
+        border-radius: 100px;
+    }
+
+    //透明头
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-md-transparent .toolbar-background-md{
+        background: #ff5a5e;
+        border-color: #ff5a5e;
+    }
+    .toolbar-md-transparent .toolbar-title-md, .toolbar-ios-transparent .toolbar-title-ios{
+        color: #ffffff;
+    }
+    .bar-button-default-ios, .bar-button-default-md{
+        color: #ffffff;
+    }
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-ios-transparent .toolbar-background-ios{
+        border-color: transparent !important;
+    }
+    .transparent::after{
+        border-color: transparent !important;
+    }
+    .header-md-transparent::after{
+        background-image: none !important;
+    }
+
+
+    #choujiang{
+        position: fixed;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: calc(100% + 100px);
+        height: -moz-calc(100% + 100px);
+        height: -webkit-calc(100% + 100px);
+        background: rgba(0,0,0,0.5);
+        overflow: hidden;
+        z-index: 9999999;
+    }
+
+    #choujiang .qd-content{
+        float: left;
+        width: 86%;
+        margin-left: 7%;
+        margin-top: -100vh;
+        background: #fff;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.5s;
+    }
+    #choujiang .cj-header{
+        padding: 20px 16px;
+        background: #ff5a5e;
+        color: #fff;
+        font-size: 19px;
+        float: left;
+        width: 100%;
+    }
+    #choujiang .cj-close{
+        position: absolute;
+        font-size: 26px;
+        right: 16px;
+        top: 6px;
+    }
+    #choujiang .cj-m-content{
+        float: left;
+        width: 100%;
+        padding-top: 16px;
+    }
+    #choujiang .cj-m-content h2{
+        float: left;
+        width: 100%;
+        padding: 16px;
+        color: #787878;
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+    }
+    #choujiang  .cj-fp-s{
+        float: left;
+        width: 100%;
+        padding: 0 8px;
+    }
+    #choujiang .cj-item{
+        float: left;
+        width: 33.33%;
+        padding-right: 16px;
+        margin-bottom: 16px;
+        position: relative;
+    }
+    #choujiang .cj-item .cj-item-text{
+        float: left;
+        width: 100%;
+        padding: 7vw 0;
+        height: 31vw;
+        text-align: center;
+        border:1px #dd9a13 solid;
+        border-radius: 10px;
+        position: relative;
+    }
+    #choujiang .cj-item .cj-item-text h1{
+        color: #be6628;
+        margin: 0;
+    }
+    #choujiang .cj-item .cj-item-text p{
+        color: #be6628;
+        margin: 0;
+    }
+    #choujiang .cj-item  .cj-mm{
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        background: url('../assets/img/fp-1.png') no-repeat center center / 100% 100%;
+    }
+    @media screen and (min-width: 500px){
+        #choujiang .qd-content{
+            width: 400px;
+            margin-top: -100vh;
+            left: 50%;
+            margin-left: -200px;
+        }
+        .card{
+            height: 20vw !important;
+        }
+        .card .csa{
+            height: 20vw !important;
+        }
+        .card .csa .csa-m h1{
+            margin: 6vw 0 0 0 !important;
+        }
+    }
+    #choujiang .qd-hidden{
+        margin-top: 35vh;
+    }
+    .qd-cmcc{
+        float: left;
+        width: 100%;
+        text-align: center;
+        border-top: 1px #eee solid;
+        position: relative;
+    }
+    .qd-cmcc label{
+        position: absolute;
+        background: #fff;
+        line-height: 30px;
+        padding: 0 10px;
+        margin-left: -84px;
+        left: 50%;
+        top: -15px;
+        color: #999;
+    }
+    .qd-cmcc a{
+        float: left;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        color:#ff5a5e;
+    }
+
+
+    /*抽奖*/
+    .card-container {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .card {
+        width: 33.33%;
+        height: 30vw;
+        float: left;
+        position: relative;
+        margin-bottom: 16px;
+        overflow: hidden;
+    }
+    .card .csa{
+        width: 100%;
+        height: 100%;
+        float: left;
+        height: 30vw;
+        padding: 0 8px;
+    }
+    .card .csa .csa-m{
+        float: left;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        text-align: center;
+    }
+    .card .csa .csa-m-d{
+        background: url('../assets/img/fp-1.png') no-repeat center center / 100% 100%;
+    }
+    .card .csa .csa-m h1{
+        color: #d5d8da;
+        margin: 8vw 0 0 0;
+    }
+    .card .csa .csa-m p{
+        color: #d5d8da;
+        margin: 0;
+    }
+    .card .font,
+    .card .back {
+        width: 100%;
+        position: absolute;
+        transition: transform 0.4s;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+    }
+
+    .card .font {
+        -webkit-transform: rotateY( 0deg);
+        -moz-transform: rotateY( 0deg);
+        -o-transform: rotateY( 0deg);
+        transform: rotateY( 0deg);
+    }
+
+    .card .back {
+        -webkit-transform: rotateY( -180deg);
+        -moz-transform: rotateY( -180deg);
+        -o-transform: rotateY( -180deg);
+        transform: rotateY( -180deg);
+    }
+
+    .active .font {
+        -webkit-transform: rotateY( 180deg);
+        -moz-transform: rotateY( 180deg);
+        -o-transform: rotateY( 180deg);
+        transform: rotateY( 180deg);
+    }
+
+    .active .back {
+        -webkit-transform: rotateY( 0deg);
+        -moz-transform: rotateY( 0deg);
+        -o-transform: rotateY( 0deg);
+        transform: rotateY( 0deg);
+    }
+    .card.active .csa-m{
+        background: #f5f8fa;
+        border:1px #d5d8da solid;
+        border-radius: 5px;
+    }
+    
+    #choujiang .card .first-bg{
+        background: #fff2d4 !important; 
+        border:1px #dd9a13 solid;
+        border-radius: 5px;
+    }
+    #choujiang .card .first-bg *{
+        color: #be6628 !important;
+    }
+}

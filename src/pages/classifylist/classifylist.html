@@ -1,0 +1,72 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      {{pageName}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-notwork" (tap)="ionViewDidLoad()"></div>
+  <div class="pd-col-content-all has-wifi" id="scroll_1">
+
+    <div class="search-header">
+      <div class="hst">
+        <div class="cm1">
+          <a (tap)="getBookList('order',null)" [ngClass]="{'active':param.order == null}">全部</a>
+        </div>
+        <div class="cm2">
+          <a (tap)="getBookList('order','hot')" [ngClass]="{'active':param.order == 'hot'}">热门图书</a>
+          <a (tap)="getBookList('order','recommend')" [ngClass]="{'active':param.order == 'recommend'}">推荐图书</a>
+          <a (tap)="getBookList('order','new')" [ngClass]="{'active':param.order == 'new'}">最新上架</a>
+        </div>
+      </div>
+      <div class="hst">
+        <div class="cm1">
+          <a (tap)="getBookList('book_cat_sonid',null)" [ngClass]="{'active':param.book_cat_sonid == null}">全部</a>
+        </div>
+        <div class="cm2">
+          <a *ngFor="let cat of classifyArray" (tap)="getBookList('book_cat_sonid',cat.book_cat_id)" [ngClass]="{'active':param.book_cat_sonid == cat.book_cat_id}">{{cat.book_cat_name}}</a>
+        </div>
+      </div>
+      <div class="hst">
+        <div class="cm1">
+          <a (tap)="getBookList('type','all')" [ngClass]="{'active':param.type == 'all'}">全部</a>
+        </div>
+        <div class="cm2">
+          <a (tap)="getBookList('type','free')" [ngClass]="{'active':param.type == 'free'}">免费</a>
+          <a (tap)="getBookList('type','discount')" [ngClass]="{'active':param.type == 'discount'}" [hidden]="param.book_type == 1">特价</a>
+          <a (tap)="getBookList('type','vip')" [ngClass]="{'active':param.type == 'vip'}" [hidden]="param.book_type == 2">VIP</a>
+          <a (tap)="getBookList('type','continue')" [ngClass]="{'active':param.type == 'continue'}" [hidden]="param.book_type == 2">连载中</a>
+          <a (tap)="getBookList('type','end')" [ngClass]="{'active':param.type == 'end'}" [hidden]="param.book_type == 2">已完结</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-content">
+      <div class="book-line" *ngFor="let book of book_list_data" (tap)="toBookInfo(book.book_id,book.book_type)">
+        <div class="m-cover">
+          <i class="mianfei" *ngIf="book.discount_price == 0"></i>
+          <i class="tejia" *ngIf="book.discount_price && book.discount_price > 0"></i>
+          <img src="{{ service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+          <img src="{{ book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+        </div>
+        <div class="m-detail">
+          <h1>{{book.book_name}}</h1>
+          <div class="m-remark">{{book.book_remark}}</div>
+          <div class="m-other">
+            <label class="m-left">{{book.book_author}}</label>
+            <label class="m-right">{{book.book_cat_name}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-load-bottom" [hidden]="load_more">
+      <ion-spinner name="dots"></ion-spinner>
+      <div>请稍候，努力加载中</div>
+    </div>
+    <div class="message-bottom" [hidden]="param.pages >= param.pageNum">共为你找到{{param.total}}本图书!</div>
+
+  </div>
+</ion-content>

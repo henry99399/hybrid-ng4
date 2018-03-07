@@ -1,0 +1,61 @@
+page-bookreviews {
+    .pl-item{
+        float: left;
+        width: 100%;
+        padding: 16px;
+        margin: 0;
+        border-bottom: 1px #eee solid;
+    }
+    .pl-item:last-child{
+        border-bottom: none;
+    }
+    .pl-item dt{
+        float: left;
+        width: 56px;
+        vertical-align: top;
+        margin: 0;
+    }
+    .pl-item .u-cover{
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        overflow: hidden;
+        background: url('../assets/img/icon.png') no-repeat center center / 100% 100%;
+    }
+    .pl-item .u-cover img{
+        float: left;
+        width: 100%;
+    }
+    .pl-item dd{
+        margin: 0;
+        float: left;
+        width: calc(100% - 56px);
+        width: -moz-calc(100% - 56px);
+        width: -webkit-calc(100% - 56px);
+    }
+    .pl-item dd .u-name{
+        color: #999;
+        padding-right: 10px;
+        line-height: 30px;
+    }
+    .pl-item dd .u-time{
+        color: #999;
+        line-height: 30px;
+    }
+    .pl-item dd .u-dianzan{
+        float: right;
+        color: #999;
+        line-height: 20px
+    }
+    .pl-item dd .u-dianzan i{
+        margin-right: 5px;
+    }
+    .pl-item dd .u-dianzan i.active{
+        color: #f16a75;
+    }
+    .pl-item dd .pl-txt{
+        color: #565656;
+        line-height: 1.5em;
+    }
+}

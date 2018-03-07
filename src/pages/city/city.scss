@@ -1,0 +1,370 @@
+page-city {
+    ion-content {
+        .scroll-content {
+            overflow: hidden;
+        }
+    }
+    .p-gg{
+        min-height: 40vw;
+        background: #f5f8fa;
+    }
+    .swiper-container{
+        background: #fff;
+    }
+    //自定义头
+    .my-set-navbar{
+        width: 100%;
+        height: 44px;
+        position: relative;
+    }
+    .header-md-light .my-set-navbar{
+        height: 56px;
+    }
+    .plan-nav-1{
+        float:left;
+        width: 100%;
+        padding: 4px;
+        height: 44px;
+        position: relative;
+        text-align: center;
+    }
+    .plan-nav-2{
+        position: absolute;
+        width: 100%;
+        padding: 4px;
+        height: 44px;
+        text-align: center;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+    .my-set-navbar h1{
+        line-height: 36px;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+        pointer-events: auto;
+        margin: 0;
+    }
+    .my-set-navbar .plan-nav-2 *{
+        color: #000 !important;
+    }  
+    .header-md-light .plan-nav-1, 
+    .header-md-light .plan-nav-2{
+        padding: 10px 4px;
+        height: 56px;
+    }
+    .add_book_action .m_cover{
+        background: #fff;
+        box-shadow: 0 0 1px #aaa;
+    }
+    .add_book_action .m_cover i{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 35px;
+        margin: -18px auto auto -18px;
+        color: #dcdcdc;
+    }
+    .spinner-ios-ios-small circle, .spinner-md-ios-small circle{
+        fill: #fff;
+    }
+    .toolbar-ios-light .button-ios, .toolbar-md-light .button-md{
+        height:36px;
+        margin: 0;
+        color: #000;
+        background: #fff;
+        box-shadow: none;
+    }
+    .header-md-light .toolbar-md{
+        height: 56px;
+    }
+
+
+
+
+    /*独立css*/
+    .nav-li-par{
+        position: absolute;
+        top: 10px;
+        left: 60px;
+        right: 60px;
+        height: 36px;
+    }
+    .toolbar-content-ios .nav-li-par{
+        top: 4px;
+    }
+    .nav-li-pll{
+        float: left;
+        width: 100%;
+        position: relative;
+        height: 36px;
+        overflow: hidden;
+    }
+    .header-nav-bar-lab{
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .header-nav-bar-lab li{
+        float: left;
+        width: 25%;
+        list-style: none;
+        text-align: center;
+        line-height: 36px;
+        font-size: 17px;
+        color: #999;
+        transition: all 0.3s;
+    }
+    .dmdd{
+        position: absolute;
+        width: 25%;
+        left: 0;
+        bottom: 0;
+        transition: all 0.3s;
+    }
+    .dmdd s{
+        width: 30px;
+        display: block;
+        margin: 0 auto;
+        background: #ee4552;
+        height: 3px;
+        border-radius: 3px;
+    }
+    .active_1 li:nth-child(1){
+        color: #333;
+    }
+    .active_2 li:nth-child(2){
+        color: #333;
+    }
+    .active_3 li:nth-child(3){
+        color: #333;
+    }
+    .active_4 li:nth-child(4){
+        color: #333;
+    }
+
+    .active_1 .dmdd{
+        left: 0;
+    }
+    .active_2 .dmdd{
+        left: 25%;
+    }
+    .active_3 .dmdd{
+        left: 50%;
+    }
+    .active_4 .dmdd{
+        left: 75%;
+    }
+    .slide-zoom{
+        height: 40vw;
+        background: #f5f8fa;
+        overflow: hidden;
+    }
+    .slid-ccm-par{
+        float: left;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .pd-col-content-all{
+        float: left;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .pd-col-content{
+        float: left;
+        width: 100%
+    }
+    .cm-nav-bar{
+        padding: 16px 6px;
+        border-bottom: 10px #f5f8fa solid;
+    }
+    .cm-nav-bar .cm-nv-item{
+        float: left;
+        width: 20%;
+    }
+    .cm-nav-bar .cm-nv-item img{
+        display: block;
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+        max-width: 50px;
+    }
+    .cm-nav-bar .cm-nv-item p{
+        font-size: 14px;
+        margin: 6px 0 0 0;
+    }
+    .df-model{
+        padding: 16px 0 0 16px;
+        border-bottom: 10px #f5f8fa solid;
+    }
+    .df-model-header{
+        float: left;
+        width: 100%;
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 16px;
+    }
+    .df-model-header a{
+        float: right;
+        padding-right: 16px;
+        font-size: 12px;
+        font-weight: normal;
+        color: #999;
+    }
+    .model-book{
+        float: left;
+        width: 33.33%;
+        padding-right: 16px;
+        margin-bottom: 16px;
+    }
+    .model-book .m_cover{
+        float: left;
+        width: 100%;
+        height: 38vw;
+        box-shadow: 0 0 3px #ccc;
+        background: url(../assets/img/coverNoBook.jpg) no-repeat 0 0 / 100% 100% #efefef;
+    }
+    .model-book .m_cover img{
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    .model-book p{
+        float: left;
+        width: 100%;
+        margin: 6px 0 0 0;
+        font-size: 12px;
+        text-align: left;
+        line-height: 16px;
+        height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .model-yd{
+        padding: 16px 6px 16px 16px;
+        border-bottom: 10px #f5f8fa solid;
+    }
+    .model-yd .yd-item{
+        float: left;
+        width: 33.33%;
+        padding-right: 10px;
+    }
+    .model-yd .yd-item h1{
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+        text-align: center;
+    }
+    .model-yd .yd-item ul{
+        float: left;
+        width: 100%;
+        margin: 0 0 10px 0;
+        padding: 0;
+    }
+    .model-yd .yd-item ul li{
+        float: left;
+        width: 25%;
+        list-style: none;
+        font-size: 12px;
+        color: #999;
+    }
+    .model-yd .yd-item img{
+        float: left;
+        width: 100%;
+    }
+    .message-bottom{
+        float: left;
+        width: 100%;
+        padding: 16px 0 16px;
+        font-size: 12px;
+        text-align: center;
+        color: #999;
+    }
+    .class-model{
+        border-color: #fff;
+    }
+    .class-model-l{
+        padding: 16px 10px 10px 10px;
+        float: left;
+        width: 100%;
+    }
+    .class-model .class-li{
+        float: left;
+        width: 25%;
+        font-size: 14px;
+        line-height: 34px;
+    }
+    .class-cm-bg{
+        float: left;
+        width: 100%;
+        position: relative;
+    }
+    .class-cm-bg img{
+        float: left;
+        width: 100%;
+    }
+    .class-cm-bg-fix{
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        left: 8vw;
+        right: 8vw;
+        font-size: 16px;
+    }
+    .class-cm-bg-fix .cc-fix-item{
+        float: left;
+        width: 25%;
+        text-align: center;
+        line-height: 50px;
+        color: #00590a;
+        font-weight: bold;
+    }
+    .fix-1{
+        background: url(../assets/img/class-bg-2.png) no-repeat right center / auto 20px;
+    }
+    .fix-2{
+        background: url(../assets/img/class-bg-1.png) no-repeat right center / auto 20px;
+    }
+    .fix-3{
+        background: url(../assets/img/class-bg-3.png) no-repeat right center / auto 20px;
+    }
+    #mySwiper .swiper-slide{
+        display:inline-block
+    }
+    @media screen and (min-width: 500px){
+        .nav-li-par{
+            left: 160px;
+            right: 160px;
+        }
+        .model-book{
+            width: 25%;
+        }
+        .model-book .m_cover{
+            height: 30vw;
+        }
+        .model-book p{
+            height: 20px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+
+    .swiper-pagination-bullet-active{
+        background: #ee4552;
+    }
+    // .swiper-pagination-bullet{
+    //     height: 3px;
+    //     width: 20px;
+    //     border-radius: 0;
+    // }
+}

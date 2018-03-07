@@ -1,0 +1,383 @@
+page-bookinfo {
+    .clear_bg_btn{
+        background-color: transparent;
+        color: #333;
+        height: 1.5em;
+        margin: 6px 0 0 0;
+        box-shadow: none;
+    }
+    .toolbar-title{
+        padding: 0 10px !important;
+    }
+    .title-ios{
+        padding: 0 !important;
+    }
+    .book-info-head{
+        float: left;
+        width: 100%;
+        padding: 16px 32px;
+    }
+    .m-cover{
+        float: left;
+        width: 27vw;
+        height: 37vw;
+        position: relative;
+        box-shadow: 0 0 3px #ccc;
+        background: url(../assets/img/coverNoBook.jpg) no-repeat 0 0 / 100% 100% #efefef;
+    }
+    .book-end-time{
+        float: left;
+        width: 100%;
+        font-size: 12px;
+        padding: 16px 16px 0 16px;
+        border-top: 1px #eee solid;
+    }
+    .em-ing{
+        color: #f53d3d;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+    }
+    .em-end{
+        color: #43a0ef;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+    }
+    .m-cover i{
+        position: absolute;
+        width: 10vw;
+        height: 10vw;
+        left: 0;
+        top: 0;
+    }
+    .book-0 i{
+        background: url(../assets/img/tap-4.png) no-repeat 0 0 / 100% 100%;
+    }
+    .book-1 i{
+        background: url(../assets/img/tap-5.png) no-repeat 0 0 / 100% 100%;
+    }
+    .m-cover img{
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    .book-detail{
+        float: left;
+        width: calc(100% - 27vw);
+        width: -moz-calc(100% - 27vw);
+        width: -webkit-calc(100% - 27vw);
+        padding-left: 16px;
+    }
+    .book-detail .book-name{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .book-detail .book-cm{
+        color: #898989;
+        margin-top: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .book-remark{
+        float: left;
+        width: 100%;
+        border-top: 1px #eee solid;
+        border-bottom: 1px #eee solid;
+        margin-top: 16px;
+        padding: 10px 16px;
+    }
+    .reamrk-tt{
+        font-size:13px;
+        line-height:1.7em;
+        max-height: 5.1em;
+        color: #898989;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        overflow: hidden;
+        -webkit-box-pack: center;
+    }
+    .book-center{
+        float: left;
+        width: 100%;
+        border-bottom: 10px #f5f8fa solid;
+    }
+    .reamrk-tt.active{
+        overflow: visible !important;
+        height: auto !important;
+        max-height: 100em !important;
+        -webkit-line-clamp: 0 !important;
+        display: block;
+    }
+    .remark-hidden{
+        text-align: center;
+        padding-top: 10px;
+        color: #f16a75;
+    }
+    .book-mulu{
+        float: left;
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .book-mulu i{
+        float: right;
+        color: #999;
+    }
+
+
+
+    /*评论*/
+    .un-pl-data{
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #999;
+        font-size: 12px;
+        height: 100px;
+        background: url('../assets/img/not-review.png') no-repeat center 0 / auto 80px;
+    }
+    .pl-header{
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+    .pl-item{
+        float: left;
+        width: 100%;
+        padding: 16px;
+        margin: 0;
+        border-bottom: 1px #eee solid;
+    }
+    .pl-item dt{
+        float: left;
+        width: 56px;
+        vertical-align: top;
+        margin: 0;
+    }
+    .pl-item .u-cover{
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        overflow: hidden;
+        background: url('../assets/img/icon.png') no-repeat center center / 100% 100%;
+    }
+    .pl-item .u-cover img{
+        float: left;
+        width: 100%;
+    }
+    .pl-item dd{
+        margin: 0;
+        float: left;
+        width: calc(100% - 56px);
+        width: -moz-calc(100% - 56px);
+        width: -webkit-calc(100% - 56px);
+    }
+    .pl-item dd .u-name{
+        color: #999;
+        padding-right: 10px;
+        line-height: 30px;
+    }
+    .pl-item dd .u-time{
+        color: #999;
+        line-height: 30px;
+    }
+    .pl-item dd .u-dianzan{
+        float: right;
+        color: #999;
+        line-height: 20px
+    }
+    .pl-item dd .u-dianzan i{
+        margin-right: 5px;
+    }
+    .pl-item dd .u-dianzan i.active{
+        color: #f16a75;
+    }
+    .pl-item dd .pl-txt{
+        color: #565656;
+        line-height: 1.5em;
+    }
+    .pl-look-all{
+        float: left;
+        width: 100%;
+        padding: 16px;
+        color: #898989;
+        text-align: center;
+    }
+    .book-list{
+        float: left;
+        width: 100%;
+        padding: 0 0 0 16px;
+    }
+    .list-title{
+        float: left;
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .m-book{
+        float: left;
+        width: 33.33%;
+        padding-right: 16px;
+    }
+    .m-book .m-cover{
+        float: left;
+        width: 100%;
+        height: 38vw;
+        background: url(../assets/img/coverNoBook.jpg) no-repeat 0 0 / 100% 100% #efefef;
+    }
+    .m-book .m-cover img{
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    .m-book  p{
+        float: left;
+        width: 100%;
+        margin: 6px 0 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        line-height: 20px;
+        height: 20px;
+        text-overflow: ellipsis;
+        margin-bottom: 16px;
+        font-size: 12px;
+    }
+    
+    .book-detail .book-price s{
+        color: #ababab;
+    }
+    .book-detail .book-price em{
+        color: #f16a75;
+        font-style: normal;
+    }
+    .footer{
+        background: #fff;
+    }
+    .footer .c-btn{
+        width: 30%;
+        margin: 0;
+        float: left;
+        border-radius: 0;
+        text-align: center;
+        padding: 8px 0 6px 0;
+        line-height: 18px;
+        border-top: 1px #eee solid;
+    }
+    .footer .ol-1 button:nth-child(2){
+        width: 40%;
+        height: 55px;
+        margin: 0;
+        float: left;
+        border-radius: 0;
+    }
+    .footer .ol-1 button i{
+        float: left;
+        width: 100%;
+    }
+    .footer .ol-1 button label{
+        float: left;
+        width: 100%;
+    }
+
+    .footer .ol-2 .c-btn{
+        width: 50%;
+    }
+    .footer .ol-2 button{
+        width: 50%;
+        height: 55px;
+        margin: 0;
+        float: left;
+        border-radius: 0;
+    }
+
+    .footer-fx{
+        background: rgba(0,0,0,0.5);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+        display: none;
+    }
+    .fx-content{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: #fff;    
+        padding: 20px;    
+    }
+    .fx-content .fx-title{
+        font-size: 16px;
+        float: left;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .fx-content .fx-items{
+        float: left;
+        width: 100%;
+    }
+    .fx-content .fx-item{
+        float: left;
+        width: 25%;
+        text-align: center;
+        color: #999;
+    }
+    .fx-content .fx-item span{
+        float: left;
+        width: 100%;
+        height: 50px;
+    }
+    .fx-content .fx-item span.io-weixin{
+        background: url(../assets/img/fx-weixin.png) no-repeat center center / 50px 50px;
+    }
+    .fx-content .fx-item span.io-weibo{
+        background: url(../assets/img/fx-weibo.png) no-repeat center center / 50px 50px;
+    }
+    .fx-content .fx-item span.io-qq{
+        background: url(../assets/img/fx-qq.png) no-repeat center center / 50px 50px;
+    }
+    .fx-content .fx-item span.io-pyq{
+        background: url(../assets/img/fx-pyq.png) no-repeat center center / 50px 50px;
+    }
+    .fx-content .fx-item label{
+        float: left;
+        width: 100%;
+        margin-top: 8px;
+    }
+    @media screen and (min-width: 500px){
+        .m-book{
+            width: 25%;
+        }
+        .m-book .m-cover{
+            height: 30vw;
+        }
+        .m-cover{
+            width: 22vw;
+            height: 30vw;
+        }
+        .book-detail .book-name{
+            font-size: 22px;
+        }
+        .book-detail .book-cm{
+            margin-top: 10px;
+        }
+        .fx-content .fx-items{
+            padding: 0 20vw;
+        }
+    }
+}

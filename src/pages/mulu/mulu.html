@@ -1,0 +1,39 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      目录
+    </ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button>倒序</button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ul *ngIf="book_type == 2">
+    <li *ngFor="let mulu1 of book_mulu">
+      <a (tap)="selectBook(mulu1)">
+        <span>{{mulu1.name}}</span>
+        <label *ngIf="mulu1.is_free">免费</label>
+        <!-- <label *ngIf="!mulu1.is_free">VIP</label> -->
+      </a>
+      <dl>
+        <dd *ngFor="let mulu2 of mulu1.child">
+          <a (tap)="selectBook(mulu2)">
+            <span>{{mulu2.name}}</span>
+            <label *ngIf="mulu2.is_free">免费</label>
+            <!-- <label *ngIf="!mulu2.is_free">VIP</label> -->
+          </a>
+        </dd>
+      </dl>
+    </li>
+  </ul>
+  <ul *ngIf="book_type == 1">
+      <li *ngFor="let mulu of book_mulu">
+        <a (tap)="selectBook(mulu)">
+          <span>{{mulu.ch_name}}</span>
+          <label *ngIf="mulu.ch_vip == 0">免费</label>
+        </a>
+      </li>
+    </ul>
+</ion-content>

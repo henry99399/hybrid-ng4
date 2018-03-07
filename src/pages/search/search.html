@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar color="light" [ngStyle]="{'opacity': service.platformName == 'ios' ? 0 : 1}" style="border-bottom:1px #eee solid;">
+    <div class="searchbar searchbar-ios ng-pristine ng-valid searchbar-left-aligned searchbar-active ng-touched">
+      <form class="my-search-form" (submit)="search()">
+        <i class="iconfont icon-search"></i>
+        <input id="mySearchInput" type="search" [(ngModel)]="mySearchText" name="search" (focus)="searchFocus($event)" />
+        <span class="search-saoma" (tap)="saomaAddBook($event)">
+          <i class="iconfont icon-saoma1"></i>
+        </span>
+      </form>
+    </div>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="openModal()">
+        <span style="padding: 0 6px;font-size:14px;">分类</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+  <ion-navbar color="light" style="padding:0;" id="childNavbar" [ngStyle]="{'opacity': service.platformName == 'ios' ? 0 : 1}">
+    <div style="width:300px;margin:0 auto;">
+      <ion-segment [(ngModel)]="pet" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="yuanchuang">原创</ion-segment-button>
+        <ion-segment-button value="chuban">出版</ion-segment-button>
+      </ion-segment>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides (ionSlideDidChange)="slideChanged()" style="background:#fff;border-top:15px #f5f8fa solid;">
+    <ion-slide>
+      <div class="page-notwork" (tap)="toSearchPage(nowifi_key)"></div>
+      <div class="mocc-content has-wifi" id="scroller1">
+        <div class="mocc-c-con">
+          <div class="book-list-item" *ngFor="let book of yuanchuan_book" (tap)="toBookInfo(book.book_id,book.book_type)">
+            <div class="book-cover">
+              <i class="mianfei" *ngIf="book.discount_price == 0"></i>
+              <i class="tejia" *ngIf="book.discount_price && book.discount_price > 0"></i>
+              <img src="{{ service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+              <img src="{{ book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+            </div>
+            <div class="book-detail">
+              <h1>{{book.book_name}}</h1>
+              <div class="book-remark">{{book.book_remark}}</div>
+              <div class="book-other">
+                <label class="book-author">{{book.book_author}}</label>
+                <label class="book-cat">{{book.book_cat_name}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="loading-text" id="loading1">
+          <ion-spinner name="dots"></ion-spinner>
+          <div>请稍候，努力加载中</div>
+        </div>
+        <div class="un-more-data" id="unmore1">共为你找到{{param_yuanchuan.total}}本图书!</div>
+        <div class="un-not-data" id="unmore11"></div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="page-notwork" (tap)="toSearchPage(nowifi_key)"></div>
+      <div class="mocc-content has-wifi" id="scroller2">
+        <div class="mocc-c-con">
+          <div class="book-list-item" *ngFor="let book of chuban_book" (tap)="toBookInfo(book.book_id,book.book_type)">
+            <div class="book-cover">
+              <i class="mianfei" *ngIf="book.discount_price == 0"></i>
+              <i class="tejia" *ngIf="book.discount_price && book.discount_price > 0"></i>
+              <img src="{{ service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2" onload="imgLoad(this)" class="opacity_img">
+              <img src="{{ book.book_cover_small}}" *ngIf="book.book_type == 1" onload="imgLoad(this)" class="opacity_img">
+            </div>
+            <div class="book-detail">
+              <h1>{{book.book_name}}</h1>
+              <div class="book-remark">{{book.book_remark}}</div>
+              <div class="book-other">
+                <label class="book-author">{{book.book_author}}</label>
+                <label class="book-cat">{{book.book_cat_name}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="loading-text" id="loading2">
+          <ion-spinner name="dots"></ion-spinner>
+          <div>请稍候，努力加载中</div>
+        </div>
+        <div class="un-more-data" id="unmore2">共为你找到{{param_chuban.total}}本图书!</div>
+        <div class="un-not-data" id="unmore22"></div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<div id="fixKeysCon" [ngStyle]="{'display': service.platformName == 'ios' ? 'none' : 'block'}">
+  <div class="my-search-keys" [hidden]="searchKeys.length == 0">
+    <h1>历史搜索
+      <span (tap)="delSearchKeys()">
+        <i class="iconfont icon-shanchu01"></i>
+      </span>
+    </h1>
+    <a *ngFor="let key of searchKeys;" (tap)="toSearchPage(key.name)">{{key.name}}</a>
+  </div>
+  <div class="hot-keys" [hidden]="hotKeys.length == 0">
+    <h1>热门搜索</h1>
+    <a *ngFor="let key of hotKeys;let i=index" (tap)="toSearchPage(key.name)">
+      <i>{{(i+1)}}</i>{{key.name}}</a>
+  </div>
+</div>

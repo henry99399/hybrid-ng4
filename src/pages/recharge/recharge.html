@@ -1,0 +1,48 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      充值中心
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="cz-conn">
+    <div class="cm-item" [ngClass]="{'active': payNum == 6}" (tap)="setPageNun(6)">
+      <h3>6元</h3>
+      <p>600长江币</p>
+      <em class="cc-1"></em>
+    </div>
+    <div class="cm-item" [ngClass]="{'active': payNum == 30}" (tap)="setPageNun(30)">
+      <h3>30元</h3>
+      <p>3000长江币</p>
+      <em class="cc-2"></em>
+    </div>
+    <div class="cm-item" [ngClass]="{'active': payNum == 50}" (tap)="setPageNun(50)">
+      <h3>50元</h3>
+      <p>5000长江币</p>
+      <em class="cc-3"></em>
+    </div>
+    <div class="cm-item" [ngClass]="{'active': payNum == 98}" (tap)="setPageNun(98)">
+      <h3>98元</h3>
+      <p>9800长江币</p>
+      <em class="cc-4"></em>
+    </div>
+    <div class="cm-item" [ngClass]="{'active': payNum == 198}" (tap)="setPageNun(198)">
+      <h3>198元</h3>
+      <p>19800长江币</p>
+      <em class="cc-5"></em>
+    </div>
+    <div class="cm-item" [ngClass]="{'active': payNum == 298}" (tap)="setPageNun(298)">
+      <h3>298元</h3>
+      <p>29800长江币</p>
+      <em class="cc-6"></em>
+    </div>
+
+    <div class="ts-msg">
+      <span>温馨提示</span>
+      <p>1. 1元人民币=100长江币</p>
+      <p>2. 用户每充值一次，可获得一定数额的长江币和一次免费补签的机会。</p>
+    </div>
+  </div>
+</ion-content>

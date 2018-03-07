@@ -1,0 +1,30 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>草根大赛</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style="display:inline-block">
+    <div class="nav-img">
+      <img src="assets/img/nav-4.png">
+      <div class="fix-btn"><button ion-button color="danger" (tap)="toinfo()">报名参赛</button></div>
+    </div>
+    <div class="tab-title">
+      <label class="active">2017赛季</label>
+      <label (tap)="dendai()">2018赛季</label>
+      <label (tap)="dendai()">2019赛季</label>
+    </div>
+    <div class="book-list">
+      <div class="list-title">草根计划作品专区</div>
+      <div class="m-book" *ngFor="let book of books"  (tap)="toBookInfo(book.book_id,1)">
+        <div class="m-cover"><img src="{{book.book_cover_small}}" onload="imgLoad(this)" class="opacity_img"/></div>
+        <p>{{book.book_name}}</p>
+        <p class="cm">{{book.book_author}}</p>
+      </div>
+    </div>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [hidden]="param.pages == param.pageNum || books.length == 0">
+    <ion-infinite-scroll-content loadingText="请稍等, 正在加载!"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

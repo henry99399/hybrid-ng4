@@ -1,0 +1,38 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      阅读记录
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="clearAll()" *ngIf="jilu && jilu.length > 0">清除</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="not-reviews-data"></div>
+  <div style="display:inline-block;width:100%">
+
+    <div class="book-item" *ngFor="let item of jilu" (tap)="selectBook(item)">
+      <div class="m-cover">
+        <img src="{{item.book_cover_small}}" *ngIf="item.book_type == 1" />
+        <img src="{{service.ctxPath + item.book_cover_small}}" *ngIf="item.book_type == 2" />
+      </div>
+      <div class="m-detail">
+        <h1>{{item.book_name}}</h1>
+        <div class="c-center">
+          <div class="c-zj">{{item.name}}</div>
+          <div class="c-other">
+            <label class="c-bai" *ngIf="item.baifen">{{item.baifen}}%</label>
+            <label class="c-time">{{formatMsgTime(item.end_time)}}</label>
+          </div>
+          <!-- <button ion-button color="danger" [outline]="true" [round]="true" (tap)="selectBook(item)">继续阅读</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [hidden]="param.pages == param.pageNum || jilu.length == 0">
+    <ion-infinite-scroll-content loadingText="请稍等, 正在加载!"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

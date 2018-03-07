@@ -1,0 +1,29 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      邮箱绑定
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div [hidden]="account">
+      <ion-item>
+          <ion-label fixed>我的邮箱</ion-label>
+          <ion-input type="text" [(ngModel)]="email" placeholder="请填写你的邮箱号码"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>验证码</ion-label>
+          <ion-input type="text" [(ngModel)]="code" placeholder="请填写验证码"></ion-input>
+          <button ion-button item-end color="light" (tap)="getCode()" [hidden]="num">获取验证码</button>
+          <button ion-button item-end color="light" [hidden]="num == 0" disabled>{{num}}s后重新获取</button>
+        </ion-item>
+        <div padding>
+          <button ion-button class="button button-block" color="danger" (tap)="submit()">保存</button>
+        </div>
+  </div>
+  <div *ngIf="account" style="text-align:center">
+    <p>我的邮箱</p>
+    <h1>{{email}}</h1>
+  </div>
+</ion-content>

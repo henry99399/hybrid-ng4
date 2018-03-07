@@ -1,0 +1,44 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      分类
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="classify-left">
+    <span class="active" [ngClass]="{'active':mcType == 'nv'}" (tap)="set_class('nv')">女频</span>
+    <span class="active" [ngClass]="{'active':mcType == 'nan'}" (tap)="set_class('nan')">男频</span>
+    <span class="active" [ngClass]="{'active':mcType == 'cp'}" (tap)="set_class('cp')">出版</span>
+  </div>
+  <div class="classify-right">
+    <div class="page-notwork" (tap)="ionViewDidLoad()"></div>
+    <div class="has-wifi">
+      <div class="nv-con nnn-con" [hidden]="mcType!='nv'">
+        <div class="cc-item" *ngFor="let cat of c_nv">
+          <div class="cc-cpver" (tap)="toClassifyList(cat.book_cat_id,cat.book_cat_name,0)">
+            <img src="assets/img/cd-nv-{{cat.book_cat_id}}.png" />
+            <p>{{cat.book_cat_name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="nan-con nnn-con" [hidden]="mcType!='nan'">
+        <div class="cc-item" *ngFor="let cat of c_nan">
+          <div class="cc-cpver" (tap)="toClassifyList(cat.book_cat_id,cat.book_cat_name,1)">
+            <img src="assets/img/cd-nan-{{cat.book_cat_id}}.png" />
+            <p>{{cat.book_cat_name}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="cp-con nnn-con" [hidden]="mcType!='cp'">
+        <div class="cc-item" *ngFor="let cat of c_cb">
+          <div class="cc-cpver" (tap)="toClassifyList(cat.book_cat_id,cat.book_cat_name,2)">
+            <img src="assets/img/{{cat.book_cat_id}}.png" />
+            <p>{{cat.book_cat_name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

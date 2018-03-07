@@ -1,0 +1,227 @@
+page-classifylist {
+    ion-content{
+        overflow-y: hidden;
+    }
+    .search-header{
+        float: left;
+        width: 100%;
+    }
+    .search-header dl{
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 5px 10px;
+        border-bottom: 1px #f1f1f1 solid;
+    }
+    .search-header dl dd{
+        margin: 0;
+        float: left;
+        padding: 0 6px;
+    }
+    .search-header .hst{
+        border-collapse: separate;
+        display: table;
+        position: relative;
+        width: 100%;
+        padding:5px 10px;
+        border-bottom: 1px #f1f1f1 solid;
+    }
+    .search-header .hst .cm1{
+        display: table-cell;
+        width: 50px;
+        text-align: left;
+        vertical-align: top;
+    }
+    .search-header a{
+        float: left;
+        padding: 6px;
+        min-width: 50px;
+        text-align: left;
+        color: #666;
+        line-height: 20px;
+    }
+    .search-header a.active{
+        color: #f16a75;
+    }
+    .search-header .hst .cm2{
+        display: block;
+        width: 100%;
+    }
+
+
+    .book-line{
+        float: left;
+        width: 100%;
+        padding: 16px 0;
+        border-bottom: 1px #f4f4f4 solid;
+    }
+    .book-line .m-cover{
+        float: left;
+        height: 36vw;
+        width: 27vw;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 3px #ccc;
+        background: url(../assets/img/coverNoBook.jpg) no-repeat 0 0 / 100% 100% #efefef;
+    }
+    .book-line .m-cover img{
+        float: left;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .mianfei{
+        width: 12vw;
+        height: 12vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background: url(../assets/img/tap-4.png) no-repeat 0 0 / 100% 100%;
+    }
+    .tejia{
+        width: 12vw;
+        height: 12vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background: url(../assets/img/tap-5.png) no-repeat 0 0 / 100% 100%;
+    }
+    .em-end{
+        
+    }
+    .book-line .m-detail{
+        float: left;
+        padding-left: 10px;
+        width: calc(100% - 27vw);
+        width: -moz-calc(100% - 27vw);
+        width: -webkit-calc(100% - 27vw);
+    }
+    .book-line .m-detail h1{
+        float: left;
+        width: 100%;
+        margin: 0;
+        font-size: 16px;
+        text-align: left;
+        line-height: 24px;
+        margin-bottom: 5px;
+    }
+    .book-line .m-detail .m-remark{
+        float: left;
+        width: 100%;
+        color: #787878;
+        font-size: 12px;
+        text-align: left;
+        line-height:1.4em;
+        max-height: 2.8em;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        overflow: hidden;
+        -webkit-box-pack: center;
+        margin-bottom: 10px;
+    }
+    .book-line .m-detail .m-other{
+        float: left;
+        width: 100%;
+    }
+    .book-line .m-detail .m-other .m-left{
+        float: left;
+        width: 60%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        color: #999;
+        text-align: left;
+    }
+    .book-line .m-detail .m-other .m-right{
+        float: left;
+        width: 40%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        color: #999;
+        text-align: right;
+    }
+    .message-load-bottom{
+        float: left;
+        width: calc(100% + 32px);
+        width: -moz-calc(100% + 32px);
+        width: -webkit-calc(100% + 32px);
+        margin: -1px -16px 0 -16px;
+        padding: 16px 0 16px;
+        font-size: 14px;
+        text-align: center;
+        color: #999;
+    }
+    .message-bottom{
+        float: left;
+        width: calc(100% + 32px);
+        width: -moz-calc(100% + 32px);
+        width: -webkit-calc(100% + 32px);
+        margin: -1px -16px 0 -16px;
+        padding: 16px 0 16px;
+        font-size: 14px;
+        text-align: center;
+        color: #999;
+        background: #f5f8fa;
+    }
+    .pd-col-content-all{
+        float: left;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .search-content{
+        float: left;
+        width: 100%;
+        padding:  0 16px;
+        border-top: 10px #f5f8fa solid;
+    }
+    @media screen and (min-width: 370px){
+        .book-line .m-detail .m-remark{
+            line-height:1.4em;
+            max-height: 4.2em;
+            -webkit-line-clamp: 3;
+        }
+    }
+    @media screen and (min-width: 400px){
+        .book-line .m-detail .m-remark{
+            line-height:1.4em;
+            max-height: 5.6em;
+            -webkit-line-clamp: 4;
+        }
+    }
+    @media screen and (min-width: 500px){
+        .nav-li-par{
+            left: 100px;
+            right: 100px;
+        }
+        .book-line .m-detail .m-remark{
+            line-height:1.6em;
+            max-height: 8em;
+            -webkit-line-clamp: 5;
+            margin: 10px 0 16px 0;
+        }
+        .book-line .m-cover{
+            height: 24vw;
+            width: 18vw;
+        }
+        .book-line .m-detail{
+            width: calc(100% - 18vw);
+            width: -moz-calc(100% - 18vw);
+            width: -webkit-calc(100% - 18vw);
+            padding-left: 16px;
+        }
+    }
+
+}

@@ -1,0 +1,94 @@
+page-reviews {
+    .book-item{
+        float: left;
+        width: 100%;
+        padding: 16px 0;
+        border-bottom: 1px #eee solid;
+    }
+    .book-item:last-child{
+        border-bottom: none;
+    }
+    .m-cover{
+        float: left;
+        width: 18vw;
+        height: 24vw;
+    }
+    .m-cover img{
+        float: left;
+        width: 100%;
+    }
+    .m-detail{
+        float: left;
+        width: calc(100% - 18vw);
+        width: -moz-calc(100% - 18vw);
+        width: -webkit-calc(100% - 18vw);
+        padding-left: 16px;
+    }
+    .m-detail h1{
+        font-size: 18px;
+        margin: 10px 0;
+        font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .c-center{
+        float: left;
+        width: 100%;
+        position: relative;
+    }
+    .c-center .c-zj{
+        font-size: 15px;
+        color: #999;
+        float: left;
+        width: 100%;
+        margin-bottom: 6px;
+    }
+    .c-center .c-other{
+        float: left;
+        width: 100%;
+        color: #999;
+    }
+    .c-center button{
+        position: absolute;
+        right: 0;
+        top: -12px;
+        margin: 0;
+        background: #fff;
+        padding: 0 2rem;
+    }
+
+
+    .not-reviews-data{
+        height: 90vh;
+        background: url(../assets/img/not-review.png) no-repeat center center / 120px auto #fff;
+    }
+    .review-item p:first-child{
+        margin-bottom: 5px;
+    }
+    .review-item p{
+        white-space: normal;
+        color: #666;
+    }
+    .review-item p .book-name{
+        color: #999;
+        line-height: 24px;
+    }
+    .review-item p .book-time{
+        color: #999;
+        font-size: 12px;
+        margin-top: 3px;
+    }
+    ion-item, .item-inner{
+        border-color: #eee !important;
+    }
+    .re-title{
+        position: relative;
+    }
+    .re-title .u-dianzan{
+        position: absolute;
+        right: 0;
+        top: 3px;
+        font-size: 12px;
+    }
+}

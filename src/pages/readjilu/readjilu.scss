@@ -1,0 +1,72 @@
+page-readjilu {
+    .book-item{
+        float: left;
+        width: 100%;
+        padding: 16px 0;
+        border-bottom: 1px #eee solid;
+    }
+    .book-item:last-child{
+        border-bottom: none;
+    }
+    .scroll-content{
+        padding: 0 16px;
+    }
+    .m-cover{
+        float: left;
+        width: 20vw;
+        height: 26vw;
+    }
+    .m-cover img{
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    .m-detail{
+        float: left;
+        width: calc(100% - 20vw);
+        width: -moz-calc(100% - 20vw);
+        width: -webkit-calc(100% - 20vw);
+        padding-left: 16px;
+    }
+    .m-detail h1{
+        font-size: 16px;
+        margin: 10px 0;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .c-center{
+        float: left;
+        width: 100%;
+        position: relative;
+    }
+    .c-center .c-zj{
+        font-size: 15px;
+        color: #999;
+        float: left;
+        width: 100%;
+        margin-bottom: 6px;
+    }
+    .c-center .c-other{
+        float: left;
+        width: 100%;
+        color: #999;
+    }
+    .c-center .c-other .c-bai{
+        margin-right: 6px;
+    }
+    .c-center button{
+        position: absolute;
+        right: 0;
+        top: -12px;
+        margin: 0;
+        background: #fff;
+        padding: 0 2rem;
+        font-size: 14px;
+    }
+    .not-reviews-data{
+        height: 90vh;
+        background: url(../assets/img/not-content.png) no-repeat center center / 120px auto #fff;
+    }
+}

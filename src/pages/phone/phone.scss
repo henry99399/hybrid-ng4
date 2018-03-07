@@ -1,0 +1,14 @@
+page-phone {
+    .item-ios, .item-md{
+        padding-left: 0;
+    }
+    ion-label[fixed]{
+        flex: 0 0 80px;
+        min-width: 80px;
+        margin-right: 0;
+        font-size: 14px;
+    }
+    .text-input-ios,.text-input-md{
+        font-size: 14px;
+    }
+}

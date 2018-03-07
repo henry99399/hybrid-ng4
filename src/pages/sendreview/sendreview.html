@@ -1,0 +1,14 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      发布评论
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="submitView()" style="color:#333;margin-right:16px;">发布</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <textarea placeholder="写下你的想法吧~" [(ngModel)]="review_content" maxlength="38"></textarea>
+</ion-content>

@@ -1,0 +1,53 @@
+page-mulu {
+    ul{
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0
+    }
+    li{
+        list-style: none;
+        float: left;
+        width: 100%;
+    }
+    a{
+        float: left;
+        width: 100%;
+        line-height: 40px;
+        color: #333;
+        border-bottom: 1px #f4f4f4 solid;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 12px;
+    }
+    a span{
+        float: left;
+        width: calc(100% - 50px);
+        width: -moz-calc(100% - 50px);
+        width: -webkit-calc(100% - 50px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-indent: 0;
+    }
+    a label{
+        float: right;
+        width: 50px;
+        color: #999;
+        text-align: right;
+        line-height: 40px;
+        text-indent: 0;
+    }
+    dl{
+        float: left;
+        width: 100%;
+        margin: 0;
+    }
+    dd{
+        float: left;
+        width: 100%;
+        margin: 0;
+        text-indent: 2em;
+    }
+}

@@ -1,0 +1,41 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      所有评论
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="changeAll()" [hidden]="!df_checkbox">编辑</button>
+      <button ion-button (tap)="changeAll()" [hidden]="df_checkbox">取消</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="not-reviews-data"></div>
+  <ion-list >
+
+    <ion-item *ngFor="let review of reviews">
+      <ion-label>
+        <div class="review-item">
+          <p class="re-title">
+            <label class="book-name">《{{review.book_name}}》</label>
+            <label class="book-time">{{formatMsgTime(review.create_time)}}</label>
+
+            <span class="u-dianzan">
+              <i class="iconfont icon-dz"></i>{{review.praise_count}}
+            </span>
+          </p>
+          <p>{{review.review_content}}</p>
+        </div>
+      </ion-label>
+      <ion-checkbox [(ngModel)]="review.select" color="danger" [hidden]="df_checkbox"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [hidden]="param.pages == param.pageNum || reviews.length == 0">
+      <ion-infinite-scroll-content loadingText="请稍等, 正在加载!"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<ion-footer class="footer" [hidden]="df_footer">
+  <button ion-button color="danger" full style="margin:0" (tap)="clearAll()">删除{{total}}条评论</button>    
+</ion-footer>

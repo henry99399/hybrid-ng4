@@ -1,0 +1,345 @@
+page-search {
+    ion-content {
+        background: #fff !important;
+        .scroll-content {
+            overflow-y: hidden;
+        }
+    }
+    .slide-zoom{
+        position: relative;
+        height: 100%;
+        background: #fff;
+    }
+    .search-saoma{
+        position: absolute;
+        z-index: 10;
+        height: 34px;
+        width: 34px;
+        text-align: center;
+        bottom: 6px;
+        line-height: 34px;
+        right: 0;
+        top: 0;
+    }
+    .my-search-form{
+        float: left;
+        width: 100%;
+        height: 34px;
+        margin: 5px 0;
+        position: relative;
+        background: #f5f8fa;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    .my-search-form i{
+        float: left;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+    }
+    .mocc-c-con{
+        float: left;
+        width: 100%;
+        min-height: 20vh;
+    }
+    .my-search-form i,.my-search-form span{
+        color: #999;
+    }
+    .my-search-form input{
+        height: 24px;
+        width: calc(100% - 68px);
+        width: -moz-calc(100% - 68px);
+        width: -webkit-calc(100% - 68px);
+        background: transparent;
+        border: none;
+        margin: 5px 0;
+        line-height: 24px;
+    }
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios{
+        border-color:rgba(0,0,0,0.1);
+    }
+    .toolbar-ios-light .toolbar-title-ios, .toolbar-ios-light .bar-button-clear-ios, .toolbar-ios-light .bar-button-default-ios{
+        color: #565656;
+    }
+    .searchbar-md .searchbar-input{
+        background: #f5f8fa;
+        line-height: 28px;
+        height: 40px;
+        font-size: 1.4rem;
+        box-shadow: none;
+        border-radius: 5px;
+    }
+    .toolbar-ios-light .searchbar-ios .searchbar-input{
+        background: #f5f8fa;
+    }
+    .mocc-content{
+        float: left;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .mianfei{
+        width: 12vw;
+        height: 12vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background: url(../assets/img/tap-4.png) no-repeat 0 0 / 100% 100%;
+    }
+    .tejia{
+        width: 12vw;
+        height: 12vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background: url(../assets/img/tap-5.png) no-repeat 0 0 / 100% 100%;
+    }
+    .hot-keys{
+        float: left;
+        width: 100%;
+    }
+    .hot-keys h1{
+        float: left;
+        width: 100%;
+        line-height: 30px;
+        color: #999;
+        font-size: 14px;
+        margin: 0;
+    }
+    .hot-keys a{
+        float: left;
+        width: 50%;
+        line-height: 30px;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .hot-keys a i{
+        float: left;
+        height: 18px;
+        width: 18px;
+        margin: 5px 6px 5px 0;
+        background: #cccccc;
+        color: #fff;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+    }
+    .hot-keys a:nth-child(2) i{
+        background: #ee4552
+    }
+    .hot-keys a:nth-child(3) i{
+        background: #ee7545
+    }
+    .hot-keys a:nth-child(4) i{
+        background: #f7b250
+    }
+
+    .my-search-keys{
+        float: left;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .my-search-keys h1{
+        float: left;
+        width: 100%;
+        line-height: 30px;
+        color: #999;
+        font-size: 14px;
+        margin: 0;
+    }
+    .my-search-keys a{
+        float: left;
+        line-height: 26px;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 12px;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+    .my-search-keys h1 span{
+        float: right;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+    }
+    .my-search-keys h1 span i{
+        font-size: 18px;
+    }
+    #fixKeysCon{
+        position: fixed;
+        width: 100%;
+        background: #fff;
+        left: 0;
+        top: 54px;
+        height: 100%;
+        overflow: hidden;
+        padding: 16px;
+        z-index: 99;
+    }
+
+    .segment-md .segment-button{
+        font-size: 16px;
+        color: #333333;
+        border: none;
+    }
+    .segment-ios .segment-button{
+        font-size: 16px;
+        color: #333333;
+        border: none;
+        background-color: transparent;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
+        color: #ee4552;
+        position: relative;
+    }
+    .toolbar-ios-light .segment-ios .segment-button.segment-activated{
+        color: #ee4552;
+        position: relative;
+        background: transparent;
+    }
+    .segment-md .segment-button.activated:before, .segment-md .segment-button.segment-activated:before{
+        content: " ";
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        width: 30px;
+        height: 2px;
+        border-bottom: 2px solid #ee4552;
+        color: #979797;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-left: -15px;
+    }
+    .toolbar-ios-light .segment-ios .segment-button.segment-activated:before{
+        content: " ";
+        position: absolute;
+        left: 50%;
+        bottom: 2px;
+        width: 24px;
+        height: 2px;
+        border-bottom: 2px solid #ee4552;
+        color: #979797;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-left: -12px;
+    }
+
+
+    /*book*/
+    .book-list-item{
+        float: left;
+        width: 100%;
+        padding: 16px;
+        background: #fff;
+        border-bottom: 1px #f4f4f4 solid;
+    }
+    .book-list-item .book-cover{
+        float: left;
+        width: 27vw;
+        height: 36vw;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 3px #ccc;
+        background: url(../assets/img/coverNoBook.jpg) no-repeat 0 0 / 100% 100% #efefef;
+    }
+    .book-list-item .book-cover img{
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    .book-list-item .book-detail{
+        float: right;
+        text-align: left;
+        width: calc(100% - 27vw - 16px);
+        width: -moz-calc(100% - 27vw - 16px);
+        width: -webkit-calc(100% - 27vw - 16px);
+    }
+    .book-list-item .book-detail h1{
+        float: left;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        line-height: 40px;
+        margin: 0;
+    }
+    .book-list-item .book-detail .book-remark{
+        float: left;
+        width: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        max-height: 66px;
+        margin-bottom: 10px;
+        color: #565656;
+
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        overflow: hidden;
+        -webkit-box-pack: center;
+    }
+    .book-list-item .book-detail .book-other{
+        float: left;
+        width: 100%;
+        font-size: 12px;
+        color: #999;
+    }
+    .book-list-item .book-detail .book-other label:nth-child(1){
+        float: left;
+        width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .book-list-item .book-detail .book-other label:nth-child(2){
+        float: left;
+        width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: right;
+    }
+    @media screen and (min-width: 500px){
+        .book-list-item .book-cover{
+            height: 24vw;
+            width: 18vw;
+        }
+        .book-list-item .book-detail{
+            float: right;
+            width: calc(100% - 18vw - 16px);
+            width: -moz-calc(100% - 18vw - 16px);
+            width: -webkit-calc(100% - 18vw - 16px);
+        }
+        .book-list-item .book-detail .book-remark{
+          max-height: 110px;   
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+          word-wrap: break-word;
+          overflow: hidden;
+          -webkit-box-pack: center;
+        }
+    }
+    
+}

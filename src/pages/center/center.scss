@@ -1,0 +1,164 @@
+page-center {
+    ion-content {
+        .scroll-content {
+            overflow-y: hidden;
+        }
+    }
+    //透明头
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-md-transparent .toolbar-background-md{
+        background: transparent;
+        border-color: transparent;
+    }
+    .toolbar-md-transparent .toolbar-title-md, .toolbar-ios-transparent .toolbar-title-ios{
+        color: #ffffff;
+    }
+    .bar-button-default-ios, .bar-button-default-md{
+        color: #ffffff;
+    }
+    .toolbar-ios-transparent .toolbar-background-ios, .toolbar-ios-transparent .toolbar-background-ios{
+        border-color: transparent !important;
+    }
+    .transparent::after{
+        border-color: transparent !important;
+    }
+    .header-md-transparent::after{
+        background-image: none !important;
+    }
+
+
+
+
+    .header-user-t{
+        float: left;
+        width: 100%;
+        padding: 0 16px;
+        border-bottom: 16px #f5f8fa solid;
+    }
+    .ll-t-1{
+        float: left;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .u-m-t{
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 80px;
+        margin: 0 auto;
+        background: url('../assets/img/update-img.png') no-repeat center center / 100% auto;
+        position: relative;
+        box-shadow: 0 0 1px #aaa;
+    }
+    .u-m-t img{
+        float: left;
+        width: 100%;
+        height: 100%;
+        border-radius: 80px;
+        border:1px #eee solid;
+    }
+    .u-m-t .sex-nv{
+        position: absolute;
+        background: #f73267;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        line-height: 20px;
+        text-align: center;
+        bottom: 2px;
+        right: 2px;
+    }
+    .u-m-t .sex-nan{
+        position: absolute;
+        background: #01a4d3;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        line-height: 20px;
+        text-align: center;
+        bottom: 2px;
+        right: 2px;
+    }
+    .ll-t-2{
+        float: left;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 8px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .ll-t-3{
+        float: left;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-bottom: 16px;
+        color: #999;
+        text-overflow: ellipsis;
+        padding: 0 16px;
+    }
+    .user-set-n{
+        float: left;
+        width: 100%;
+    }
+    .item-md,.item-ios{
+        padding: 0 16px;
+        font-size: 1.7rem;
+    }
+    .list-ios .item-block .item-inner{
+        border-color: #dedede !important;
+        background-position: right 0 center;
+        padding-right: 20px;
+        font-size: 14px;
+    }
+    .item-inner .label label{
+        line-height: 24px;
+        float: left;
+    }
+    .list-ios > .item-block{
+        border-color: #dedede !important;
+    }
+    .list-ios > .item-block:first-child{
+        border: none;
+    }
+    label.cun{
+        color: #999;
+        font-size: 12px;
+    }
+    .label-ios,.label-md{
+        margin: 20px 8px 20px 0;
+    }
+    .mm-icon{
+        float: left;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+    .item-md.item-block:last-child .item-inner{
+        border-bottom: 1px solid #dedede;
+    }
+    .item-md.item-block .item-inner{
+        padding-right: 0;
+    }
+    .mm-icon-1{
+        background: url('../assets/img/center-1.png') no-repeat center center / 22px auto;
+    }
+    .mm-icon-2{
+        background: url('../assets/img/center-2.png') no-repeat center center / 22px auto;
+    }
+    .mm-icon-3{
+        background: url('../assets/img/center-3.png') no-repeat center center / 22px auto;
+    }
+    .mm-icon-4{
+        background: url('../assets/img/center-4.png') no-repeat center center / 22px auto;
+    }
+
+    .cmm-cz-btn{
+        border-radius:20px;padding:0 1em !important;margin:0 0 0 5px !important;float:right;
+    }
+}

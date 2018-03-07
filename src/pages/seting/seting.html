@@ -1,0 +1,54 @@
+<ion-header color="light">
+    <ion-navbar color="light">
+        <ion-title>
+            设置
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <button ion-item style="border-top:10px #f5f8fa solid;" (tap)="set_user_head()">
+            <label>头像</label>
+            <span item-end>
+                <span class="u-c-cover">
+                    <img *ngIf="service.LoginUserInfo" [hidden]="!service.LoginUserInfo.icon" src="{{service.ctxPath + service.LoginUserInfo.icon}}"
+                    />
+                </span>
+            </span>
+        </button>
+        <button ion-item class="cun">
+            <label>帐号ID</label>
+            <label item-end>{{service.LoginUserInfo.member_id}}</label>
+        </button>
+        <button ion-item (tap)="setNickName()">
+            <label>昵称</label>
+            <label item-end *ngIf="!service.LoginUserInfo.nick_name">未设置</label>
+            <label item-end *ngIf="service.LoginUserInfo.nick_name">{{service.LoginUserInfo.nick_name}}</label>
+        </button>
+        <button ion-item (tap)="set_sex()">
+            <label>性别</label>
+            <label item-end *ngIf="!service.LoginUserInfo.sex">保密</label>
+            <label item-end *ngIf="service.LoginUserInfo.sex == 1">男</label>
+            <label item-end *ngIf="service.LoginUserInfo.sex == 2">女</label>
+        </button>
+        <button ion-item class="un-bor-btm" (tap)="setQianming()">
+            <label>个性签名</label>
+            <label item-end>{{service.LoginUserInfo.sign}}</label>
+        </button>
+        <button ion-item style="border-top:10px #f5f8fa solid;" (tap)="setPhone()">
+            <label>手机</label>
+            <label item-end *ngIf="!service.LoginUserInfo.phone">未绑定</label>
+            <label item-end *ngIf="service.LoginUserInfo.phone">{{phone}}</label>
+        </button>
+        <button ion-item class="un-bor-btm" (tap)="setEmail()">
+            <label>邮箱</label>
+            <label item-end *ngIf="!service.LoginUserInfo.email">未绑定</label>
+            <label item-end *ngIf="service.LoginUserInfo.email">{{email}}</label>
+        </button>
+        <button ion-item class="cun" style="border-top:10px #f5f8fa solid;border-bottom: none;" (tap)="toLogin()">
+            <label class="check-label">注销</label>
+        </button>
+    </ion-list>
+    <div class="version-code" (press)="changankaiqi()" (click)="shuangjitianjia()">v{{service.version}}</div>
+</ion-content>

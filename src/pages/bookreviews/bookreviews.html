@@ -1,0 +1,35 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      所有评论
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="toSendRie()">写评论</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="display:inline-block;width:100%;">
+    <dl class="pl-item" *ngFor="let re of reviews">
+      <dt>
+        <div class="u-cover">
+          <img *ngIf="re.icon" src="{{ service.ctxPath + re.icon}}" />
+        </div>
+      </dt>
+      <dd>
+        <div>
+          <label class="u-name">{{re.nick_name}}</label>
+          <label class="u-time">{{formatMsgTime(re.create_time)}}</label>
+          <span class="u-dianzan" (tap)="dianzhan(re)">
+            <i class="iconfont icon-dz" [ngClass]="{'active': re.praise_id}"></i>{{re.praise_count}}
+          </span>
+        </div>
+        <div class="pl-txt">{{re.review_content}}</div>
+      </dd>
+    </dl>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [hidden]="param.pages == param.pageNum || reviews.length == 0">
+    <ion-infinite-scroll-content loadingText="请稍等, 正在加载!"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

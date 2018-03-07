@@ -1,0 +1,83 @@
+<ion-header color="transparent" id="home_title">
+    <ion-navbar color="transparent">
+        <div class="my-set-navbar">
+            <div class="plan-nav-1">
+                <button ion-button icon-only [hidden]="updateShelf" style="float:left" (tap)="saomaAddBook($event)">
+                    <ion-icon id="shlefStartBtn" class="iconfont icon-saoma1" style="padding:0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <button ion-button icon-only [hidden]="updateShelf" style="float:right" (tap)="toSearch($event)">
+                    <ion-icon id="shlefEndBtn" class="iconfont icon-search" style="padding: 0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <h1>我的书架</h1>
+            </div>
+            <div class="plan-nav-2" style="opacity:0;">
+                <button ion-button icon-only [hidden]="updateShelf" style="float:left" (tap)="saomaAddBook($event)">
+                    <ion-icon id="shlefStartBtn" class="iconfont icon-saoma1" style="padding:0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <button ion-button icon-only [hidden]="updateShelf" style="float:right" (tap)="toSearch($event)">
+                    <ion-icon id="shlefEndBtn" class="iconfont icon-search" style="padding: 0 8px; font-size:1.6em"></ion-icon>
+                </button>
+                <h1>我的书架</h1>
+
+                <button ion-button icon-only [hidden]="!updateShelf" style="float:left" (tap)="bookSelectAll($event)">
+                    <span style="padding: 0 16px">全选</span>
+                </button>
+                <button ion-button icon-only [hidden]="!updateShelf" style="float:right" (tap)="clearBookSelect($event)">
+                    <span style="padding: 0 16px">取消</span>
+                </button>
+            </div>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<ion-content [ngClass]="{'hasBackground': updateShelf}">
+    <div class="page-content-all">
+        <div id="wrapper" class="my-wrapper">
+            <div id="scroller" class="my-scroller">
+                <!--推荐-->
+                <div class="book-top" [hidden]="updateShelf">
+                    <div class="book-item-list">
+                        <div class="book_cover" *ngFor="let book of hotBook;let i=index" (tap)="toBookInfo(book.book_id,book.book_type)">
+                            <div class="m_cover">
+                                <s class="today-hot-{{i}}"></s>
+                                <img src="{{book.book_cover}}" *ngIf="book.book_type == 1" onload="imgLoad(this)"/>
+                                <img src="{{service.ctxPath + book.book_cover}}" *ngIf="book.book_type == 2" onload="imgLoad(this)"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--我的图书-->
+                <div class="book_shlef_list">
+                    <div class="book-item-list" [hidden]="!shlefBook || shlefBook.length == 0">
+                        <div class="book_cover" *ngFor="let book of shlefBook;" (press)="holdBook($event)">
+                            <div class="m_cover" (tap)="selectBook(book)">
+                                <img *ngIf="book.native_cover" onload="imgLoad(this)" src="{{book.native_cover}}" />
+                                <!-- <img *ngIf="service.platformName == 'ios' && book.book_type == 1" onload="imgLoad(this)" src="{{book.bk_cover}}"> -->
+                                <!-- <img *ngIf="service.platformName == 'ios' && book.book_type == 2" onload="imgLoad(this)" src="{{service.ctxPath + book.bk_cover}}"> -->
+                                <i class="select-icon" [ngClass]="{'active':book.select}" [hidden]="!updateShelf"></i>
+                                <div *ngIf="book.progrees < 100 || book.unBook != true" class="book-load-progrees">
+                                    <ion-spinner name="ios-small"></ion-spinner>
+                                    <!-- <p style="margin:0;padding:0;font-size:10px;">下载中</p> -->
+                                    <!-- <p style="margin:0;padding:0;font-size:10px;" [hidden]="book.unBook !='un-error' ">下载失败</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book_cover add_book_action" [hidden]="updateShelf">
+                            <div class="m_cover" (tap)="saomaAddBook()">
+                                <i class="iconfont icon-jia"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-find-book" style="display:none;">
+                        <div>重拾阅读习惯， 让生活更优雅</div>
+                        <div><button ion-button color="danger" [outline]="true" [round]="true" (tap)="tocity()">去找书</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<div class="update-footer" id="update-footer" [hidden]="!updateShelf">
+    <button ion-button class="button button-full" color="danger" (tap)="deleteBook()">删除</button>
+</div>
+<div id="today-qiandao" [hidden]="updateShelf" *ngIf="show_sing_in == 0" (tap)="toqiandao()">签</div>

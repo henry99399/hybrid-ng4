@@ -1,0 +1,27 @@
+<ion-content>
+    <div class="login-back">
+      <button ion-button (tap)="backHome()"
+      style="margin:0;padding:0;height:auto;font-size:30px;background-color:transparent;">
+        <ion-icon class="ion-ios-iconfont-icon-rt"></ion-icon></button>
+    </div>
+    <div class="header-logo"></div>
+    <div class="form-con">
+      <div class="form-row">
+        <i class="iconfont icon-touxiang-copy"></i>
+        <input type="text" placeholder="请输入手机/邮箱" [(ngModel)]="reg_param.account"/>
+      </div>
+      <div class="form-row">
+          <i class="iconfont icon-yanzhengma"></i>
+          <input type="tel" placeholder="请输入验证码" [(ngModel)]="reg_param.code"/>
+          <label class="get-code-m" (tap)="getCode()" [hidden]="phoneCode > 0">获取验证码</label>
+          <label class="get-code-m" [hidden]="phoneCode == 0">重新获取{{phoneCode}}秒后</label>
+        </div>
+      <div class="form-row">
+        <i class="iconfont icon-mima"></i>
+        <input type="password" placeholder="请设置新密码" [(ngModel)]="reg_param.newPwd"/>
+      </div>
+      <div class="link-row"></div>
+      <button ion-button full color="danger" (tap)="subUserForm()">修改密码</button>
+    </div>
+  </ion-content>
+  

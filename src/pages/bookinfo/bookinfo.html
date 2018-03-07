@@ -1,0 +1,155 @@
+<ion-header color="light" style="border-bottom: none">
+  <ion-navbar color="light">
+    <ion-title>&nbsp;</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only class="clear_bg_btn" (tap)="toFenxiang($event)">
+        <ion-icon id="shlefEndBtn" class="ion-ios-redo" style="padding: 0 8px; font-size:1.6em"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="page-notwork" (tap)="updatewifi()"></div>
+  <div class="has-wifi">
+    <div class="book-info-head" *ngIf="book">
+      <div class="book-mss">
+        <div class="m-cover" [ngClass]="{'book-0': book.discount_price == 0, 'book-1': book.discount_price > 0}">
+          <i></i>
+          <img src="{{book.book_cover_small}}" *ngIf="book.book_type == 1">
+          <img src="{{service.ctxPath + book.book_cover_small}}" *ngIf="book.book_type == 2">
+        </div>
+        <div class="book-detail">
+          <div class="book-name">{{book.book_name}}
+            <em *ngIf="book.is_finish == 1" class="em-end">(已完结)</em>
+            <em *ngIf="book.is_finish == 2" class="em-ing">(连载中)</em>
+          </div>
+          <div class="book-classify book-cm">分类：{{book.book_cat_name}}</div>
+          <div class="book-author book-cm">作者：{{book.book_author}}</div>
+          <div class="book-publisher book-cm" *ngIf="book.book_type == 2">出版社：{{book.book_publisher}}</div>
+          <div class="book-publisher book-cm" *ngIf="book.book_type == 1">字数：{{book.word_size}}字</div>
+          <div *ngIf="book.book_type == 2">
+            <div class="book-price book-cm" *ngIf="book.discount_price == null">价格：{{book.price}}长江币</div>
+            <div class="book-price book-cm" *ngIf="book.discount_price != null">
+              价格：
+              <s>{{book.price}}长江币</s>
+              <em *ngIf="book.discount_price > 0">{{book.discount_price}}长江币</em>
+              <em *ngIf="book.discount_price == 0">免费</em>
+            </div>
+          </div>
+          <div *ngIf="book.book_type == 1">
+            <div class="book-price book-cm" *ngIf="book.discount_price == null">价格：3长江币/千字</div>
+            <div class="book-price book-cm" *ngIf="book.discount_price != null">
+              价格：
+              <s>3长江币/千字</s>
+              <em>免费</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bok-center" *ngIf="book && book.end_time">
+        <div class="book-end-time">剩余时间：{{time_text}}</div>
+    </div>
+    <div class="book-center" *ngIf="book">
+      <div class="book-remark">
+        <div class="reamrk-tt" [ngClass]="{'active': activeRemark}">{{book.book_remark}}</div>
+        <!-- <div class="reamrk-tt active">{{book.book_remark}}</div> -->
+        <div class="remark-hidden" (tap)="activeRemark = !activeRemark" [hidden]="!book.showMoreAction">
+          <i class="iconfont icon-down" [hidden]="activeRemark"></i>
+          <i class="iconfont icon-top" [hidden]="!activeRemark"></i>
+        </div>
+      </div>
+      <div class="book-mulu" (tap)="tomulu()">
+        查看目录: 共 {{mulu_count}} 章
+        <i class="iconfont icon-right" style="font-size:14px;"></i>
+      </div>
+    </div>
+    <div class="book-center" *ngIf="review_list">
+      <div class="pl-header">书友交流</div>
+      <dl class="pl-item" *ngFor="let re of review_list.rows">
+        <dt>
+          <div class="u-cover">
+            <img *ngIf="re.icon" src="{{ service.ctxPath + re.icon}}" />
+          </div>
+        </dt>
+        <dd>
+          <div>
+            <label class="u-name">{{re.nick_name}}</label>
+            <label class="u-time">{{formatMsgTime(re.create_time)}}</label>
+            <span class="u-dianzan" (tap)="dianzhan(re)">
+              <i class="iconfont icon-dz" [ngClass]="{'active': re.praise_id}"></i>{{re.praise_count}}
+            </span>
+          </div>
+          <div class="pl-txt">{{re.review_content}}</div>
+        </dd>
+      </dl>
+      <div class="pl-look-all" *ngIf="review_list && review_list.pages > 1" (tap)="toBookReviewsPage()">查看全部评论</div>
+      <div class="un-pl-data" *ngIf="review_list && review_list.pages == 0"></div>
+    </div>
+    <div class="book-list" *ngIf="book && books">
+      <div class="list-title">相关推荐</div>
+      <div class="m-book" *ngFor="let bk of books" (tap)="Infinity_page(bk.book_id, bk.book_type)">
+        <div class="m-cover">
+          <img src="{{ service.ctxPath + bk.book_cover_small }}" *ngIf="book_type == 2" onload="imgLoad(this)" class="opacity_img" />
+          <img src="{{ bk.book_cover_small }}" *ngIf="book_type == 1" onload="imgLoad(this)" class="opacity_img" />
+        </div>
+        <p>{{ bk.book_name}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div class="footer-fx">
+  <div class="fx-content">
+    <div class="fx-title">分享到</div>
+    <div class="fx-items">
+      <div class="fx-item" (click)="fxtoweixin()">
+        <span class="io-weixin"></span>
+        <label>微信</label>
+      </div>
+      <div class="fx-item" (click)="fxtopengyouquan()">
+        <span class="io-pyq"></span>
+        <label>朋友圈</label>
+      </div>
+      <div class="fx-item" (click)="fxqq()">
+        <span class="io-qq"></span>
+        <label>QQ</label>
+      </div>
+      <div class="fx-item" (click)="fxweibo()">
+        <span class="io-weibo"></span>
+        <label>微博</label>
+      </div>
+    </div>
+  </div>
+</div>
+<ion-footer [hidden]="service.getNetEork()  == 'none'" class="footer">
+  <div class="ol-1">
+    <div class="c-btn" (tap)="toSendRie()">
+      <div>
+        <i class="iconfont icon-comments"></i>
+      </div>
+      <div>
+        <label>评论</label>
+      </div>
+    </div>
+    <button ion-button color="danger" (tap)="selectBook()">开始阅读</button>
+    <div class="c-btn" (tap)="toShouchang()">
+      <div>
+        <i class="iconfont icon-jiarushujia"></i>
+      </div>
+      <div>
+        <label>加入书架</label>
+      </div>
+    </div>
+  </div>
+  <div class="ol-2" style="display: none;">
+    <div class="c-btn" (tap)="toSendRie()">
+      <div>
+        <i class="iconfont icon-comments"></i>
+      </div>
+      <div>
+        <label>评论</label>
+      </div>
+    </div>
+    <button ion-button color="danger" (tap)="selectBook()">开始阅读</button>
+  </div>
+</ion-footer>

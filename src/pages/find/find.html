@@ -1,0 +1,25 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <div class="my-set-navbar">
+      <div class="plan-nav-1">
+        <button ion-button icon-only style="float:left" (tap)="saomaAddBook($event)">
+               <ion-icon id="shlefStartBtn" class="iconfont icon-saoma1" style="padding:0 8px; font-size:1.6em"></ion-icon>
+          </button>
+        <button ion-button icon-only style="float:right" (tap)="toSearch($event)">
+              <ion-icon id="shlefEndBtn" class="iconfont icon-search" style="padding: 0 8px; font-size:1.6em"></ion-icon>
+          </button>
+        <h1>发现</h1>
+      </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="float:left;width:100%;height:100%;position:relative;">
+    <div style="display:inline-block;width:100%;">
+      <a class="cmitem"><img src="assets/img/hd-1.jpg" (tap)="tocaogen()"></a>
+      <a class="cmitem"><img src="assets/img/hd-2.jpg" (tap)="tochongzhi()"></a>
+      <a class="cmitem"><img src="assets/img/hd-3.jpg" (tap)="toxianmian()"></a>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="login-back">
+    <button ion-button [hidden]="!service.LoginUserInfo" (tap)="backHome()"
+    style="margin:0;padding:0;height:auto;font-size:30px;background-color:transparent;">
+      <ion-icon class="ion-ios-iconfont-icon-rt"></ion-icon></button>
+  </div>
+  <div class="header-logo"></div>
+  <div class="form-con">
+    <div class="form-row">
+      <i class="iconfont icon-touxiang-copy"></i>
+      <input type="text" placeholder="请输入帐号/手机/邮箱" [(ngModel)]="param.account"/>
+    </div>
+    <div class="form-row">
+      <i class="iconfont icon-mima"></i>
+      <input type="password" placeholder="请输入密码"  [(ngModel)]="param.pwd"/>
+    </div>
+    <div class="link-row" (tap)="resetpwd()">忘记密码</div>
+
+    <button ion-button full color="danger" style="margin-bottom:7px;" (tap)="tologin()">登录</button>
+    <button ion-button full color="secondary" class="clear-btn-all" (tap)="toregister()">注册</button>
+
+    <div class="other-login">
+      <span class="login-item">
+        <div (tap)="qq_login()">
+          <span class="mm-qq"></span>
+          QQ登录
+        </div>
+      </span>
+      <span class="login-item">
+        <div (tap)="weixin_login()">
+          <span class="mm-weixin"></span>
+          微信登录
+        </div>
+      </span>
+      <span class="login-item">
+        <div (tap)="weibo_login()">
+          <span class="mm-weibo"></span>
+          微博登录
+        </div>
+      </span>
+    </div>
+  </div>
+</ion-content>

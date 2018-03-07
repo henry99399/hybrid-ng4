@@ -1,0 +1,14 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      修改签名
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <textarea style="height:120px;width:100%;border:1px #ddd solid;padding:5px;resize:none;" type="text" [(ngModel)]="sign" placeholder="请填写你的个性签名..." maxlength="16"></textarea>
+  <div >
+      <button ion-button class="button button-block" color="danger" (tap)="submit()">保存</button>
+  </div>
+</ion-content>

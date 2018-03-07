@@ -1,0 +1,17 @@
+<ion-header color="light">
+  <ion-navbar color="light">
+    <ion-title>
+      修改昵称
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label fixed>我的昵称</ion-label>
+    <ion-input type="text" [(ngModel)]="nickName" placeholder="请填写昵称" maxlength="12"></ion-input>
+  </ion-item>
+  <div padding>
+      <button ion-button class="button button-block" color="danger" (tap)="submit()">保存</button>
+  </div>
+</ion-content>

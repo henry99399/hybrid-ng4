@@ -1,0 +1,60 @@
+<ion-header color="transparent">
+  <ion-navbar color="transparent">
+    <ion-title>
+      签到
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="ml-nav"></div>
+  <div class="ml-table">
+    <div class="table-rol" *ngFor="let day of allDayArray">
+      <span class="m1" [ngClass]="{'un-qiandao': day.day > nowDay,'this-today': day.day == nowDay}" (tap)="qiandaotoday(day)">{{day.day}}</span>
+      <span class="m2" [hidden]="!day.id"></span>
+      <span class="m4" [hidden]="(day.id && day.sign_gift) || !day.id" (tap)="choujiang(day)"></span>
+      <span class="m3" [hidden]="day.day >= nowDay || day.id" (tap)="buqian(day)"></span>
+    </div>
+  </div>
+  <div style="padding:0 20px 40px 20px;" [hidden]="qiandaoToday.id" (tap)="qiandaotoday()">
+    <button ion-button color="danger" block>立即签到</button>
+  </div>
+  <div style="padding:0 20px 40px 20px;" [hidden]="!qiandaoToday.id">
+    <button ion-button color="danger" disabled block>今日已签到</button>
+  </div>
+  <div class="qd-cmcc">
+    <label>连续签到可抽奖和领取奖励</label>
+    <a (tap)="toremark()">查看说明</a>
+  </div>
+</ion-content>
+<div id="choujiang" style="display:none;">
+  <div class="qd-content">
+    <div class="cj-header">
+      签到成功，翻牌得奖励
+      <i class="cj-close" (tap)="choujiangClose()">
+        <ion-icon name="close"></ion-icon>
+      </i>
+    </div>
+    <div class="cj-m-content">
+      <div class="cj-fp-s">
+        <div class="card-container" *ngFor="let item of coujiangArr" (tap)="fanpai(item)">
+          <div class="card" [ngClass]="{'active': item.select}">
+            <a class="back">
+              <div class="csa">
+                <div class="csa-m" [ngClass]="{'first-bg': item.first}">
+                  <h1>{{item.n}}</h1>
+                  <p>长江币</p>
+                </div>
+              </div>
+            </a>
+            <a class="font">
+              <div class="csa">
+                <div class="csa-m csa-m-d"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

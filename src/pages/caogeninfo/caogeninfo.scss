@@ -1,0 +1,28 @@
+page-caogeninfo {
+    ion-content{
+        background:#f2c371 !important;
+    }
+    .fix-btn{
+        position: fixed;
+        top: 20px;
+        left: 0px;
+        z-index: 999999;
+    }   
+    .fix-btn button{
+        background: transparent !important;
+        color: #000;
+        font-size: 26px;
+        height: auto;
+        padding: 10px;
+        margin: 0;
+        box-shadow: none;
+    }
+    .fix-btn button i{
+        font-size: 30px;
+    }
+    ion-content img{
+        float: left;
+        width: 100%;
+    }
+ 
+}
